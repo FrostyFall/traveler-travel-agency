@@ -1,0 +1,22 @@
+section.all-tours-showcase .main-container {
+  position: relative;
+}
+
+section.all-tours-showcase .image-container {
+  img {
+    max-height: 300px;
+  }
+}
+
+section.all-tours-showcase h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5em 1.75em;
+  background-color: rgba(0, 0, 0, 0.45);
+  letter-spacing: 1px;
+  border-radius: 5px;
+}

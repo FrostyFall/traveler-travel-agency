@@ -1,0 +1,36 @@
+@mixin flex($horizontal, $vertical, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}
+
+@mixin underLine($color, $leftSpan: 0, $rightSpan: 0) {
+  content: "";
+  position: absolute;
+  bottom: -0.4em;
+  left: $leftSpan;
+  right: $rightSpan;
+  background-color: $color;
+  height: 0.15em;
+  border-radius: 5px;
+}
+
+@mixin button(
+  $color,
+  $bc-color,
+  $font-size,
+  $padding,
+  $border-radius: 0,
+  $border: none,
+  $width: auto
+) {
+  font-size: $font-size;
+  padding: $padding;
+  width: $width;
+  color: $color;
+  background-color: $bc-color;
+  border: $border;
+  border-radius: $border-radius;
+  cursor: pointer;
+}

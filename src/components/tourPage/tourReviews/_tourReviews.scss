@@ -1,0 +1,19 @@
+@use '../../../mixins';
+@use '../../../vars';
+
+section.tour-reviews {
+  padding: 6rem 0;
+  h3 {
+    position: relative;
+    &::after {
+      @include mixins.underLine(vars.$primary-color, -0.5em, -0.5em);
+    }
+  }
+  .main-container {
+    @include mixins.flex(center, center, column);
+  }
+  .tour-reviews-container {
+    @include mixins.flex(space-between, flex-start);
+    width: 90%;
+  }
+}

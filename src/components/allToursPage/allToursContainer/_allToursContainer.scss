@@ -1,0 +1,37 @@
+@use '../../../vars';
+@use '../../../mixins';
+
+section.all-tours-content-container {
+  padding: 4rem 0;
+}
+
+section.all-tours-content-container .all-tours-container {
+  width: 92.5%;
+  margin: 0 auto;
+}
+
+section.all-tours-content-container .all-tours-info {
+  @include mixins.flex(space-between, flex-start);
+  h3 {
+    position: relative;
+    &::after {
+      @include mixins.underLine(vars.$primary-color, 0, -0.5em);
+      position: absolute;
+    }
+  }
+}
+
+section.all-tours-content-container .all-tours {
+  @include mixins.flex(space-between, center);
+  flex-wrap: wrap;
+  row-gap: 3rem;
+}
+
+section.all-tours-content-container .all-tours-container > button {
+  @include mixins.button(#fff, vars.$primary-color, 1rem, 1em, 5px, none, 100%);
+  margin-top: 3rem;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: vars.$secondary-color;
+  }
+}

@@ -1,0 +1,99 @@
+@use '../../../mixins';
+@use '../../../vars';
+
+section.tour-booking {
+  padding-bottom: 4rem;
+}
+
+section.tour-booking .inner-container {
+  @include mixins.flex(center, center, column);
+  width: 85%;
+  margin: 0 auto;
+  h3 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    &::after {
+      @include mixins.underLine(vars.$primary-color);
+    }
+  }
+}
+
+section.tour-booking .booking-container {
+  @include mixins.flex(center, center, column);
+  width: 100%;
+}
+
+section.tour-booking .booking-container .booking {
+  @include mixins.flex(space-between, center);
+  width: 100%;
+}
+
+section.tour-booking .booking-container .options,
+section.tour-booking .booking-container form {
+  width: 48%;
+  min-height: 200px;
+}
+
+section.tour-booking .booking-container .standard,
+section.tour-booking .booking-container .premium {
+  @include mixins.button(
+    #000,
+    #fff,
+    1.25rem,
+    1em 1.5em,
+    5px,
+    2px solid vars.$secondary-color,
+    100%
+  );
+  @include mixins.flex(space-between, center);
+  transition: background-color 0.2s, color 0.2s;
+  .info {
+    text-align: start;
+  }
+  h4 {
+    font-size: inherit;
+    font-weight: 400;
+  }
+  h5 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6b6b6b;
+    margin-top: 0.25rem;
+    transition: color 0.2s;
+  }
+  &.selected,
+  &:hover {
+    background-color: vars.$secondary-color;
+    color: #fff;
+    h5 {
+      color: #efefef;
+    }
+  }
+}
+
+section.tour-booking .booking-container .options {
+  @include mixins.flex(space-between, center, column);
+}
+
+section.tour-booking .booking-container form {
+  @include mixins.flex(space-between, center, column);
+  input {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid vars.$primary-color;
+    width: 100%;
+    font-size: 1rem;
+    padding: 1em 1.5em;
+    border-radius: 5px;
+  }
+}
+
+section.tour-booking .booking-container > button {
+  @include mixins.button(#fff, vars.$primary-color, 1rem, 1em, 5px, none, 100%);
+  margin-top: 2rem;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: vars.$secondary-color;
+  }
+}

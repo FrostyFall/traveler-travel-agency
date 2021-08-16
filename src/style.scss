@@ -1,0 +1,30 @@
+// Reset
+@use './reset';
+
+// General
+@use './components/common/header/header';
+@use './components/common/footer/footer';
+@use './components/common/tourPreview/tourPreview';
+
+// Home Page
+@use './components/homePage/homeShowcase/homeShowcase';
+@use './components/homePage/aboutUs/aboutUs';
+@use './components/homePage/mostPopTours/mostPopTours';
+@use './components/homePage/agencyReviews/agencyReviews';
+@use './components/homePage/agencyReview/agencyReview';
+@use './components/homePage/images/images';
+
+// All Tours Page
+@use './components/allToursPage/allToursShowcase/allToursShowcase';
+@use './components/allToursPage/allToursContainer/allToursContainer';
+@use './components/allToursPage/filters/filters';
+@use './components/allToursPage/ratingsFilter/ratingsFilter';
+@use './components/allToursPage/priceFilter/priceFilter';
+@use './components/allToursPage/countryFilter/countryFilter';
+
+// Tour Page
+@use './components/tourPage/tourShowcase/tourShowcase';
+@use './components/tourPage/tourExperience/tourExperience';
+@use './components/tourPage/tourReviews/tourReviews';
+@use './components/tourPage/tourReview/tourReview';
+@use './components/tourPage/tourBooking/tourBooking';

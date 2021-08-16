@@ -1,0 +1,97 @@
+@use '../../../mixins';
+@use '../../../vars';
+
+section.showcase .main-container {
+  @include mixins.flex(center, flex-end);
+  width: 100%;
+  min-height: 700px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-bottom: 2rem;
+  z-index: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.16);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+}
+
+section.showcase .encouraging-msg {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  transform: translate(-30%, -25%);
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: 1.25rem 1.75rem;
+  border-radius: 5px;
+  z-index: 2;
+  h2 {
+    font-size: 1.5rem;
+    margin-right: 3.5rem;
+    line-height: 1.6;
+    letter-spacing: 0.085em;
+    color: #fff;
+  }
+}
+
+section.showcase .find-tour-container {
+  @include mixins.flex(center, center);
+  background-color: rgba(0, 0, 0, 0.35);
+  font-size: 1.2rem;
+  padding: 0.5em 0.75em;
+  border-radius: 7.5px;
+  width: 45%;
+  z-index: 2;
+  button {
+    @include mixins.button(
+      #fff,
+      vars.$find-tour-btn-color,
+      inherit,
+      0.6em 0,
+      5px,
+      none,
+      50%
+    );
+    font-family: inherit;
+    margin-left: 0.75em;
+  }
+}
+
+section.showcase .find-tour-container .custom-select {
+  position: relative;
+  width: 50%;
+  select {
+    width: 100%;
+    padding: 0.6em 1em;
+    font-size: inherit;
+    border: none;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    cursor: pointer;
+    &::-ms-expand {
+      display: none;
+    }
+  }
+  svg {
+    position: absolute;
+    content: "";
+    font-size: inherit;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    color: #fff;
+    width: 5%;
+  }
+}

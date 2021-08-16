@@ -1,0 +1,57 @@
+@use '../../../vars';
+@use '../../../mixins';
+
+.filters-container .price-filter {
+  position: absolute;
+  top: 2.75em;
+  right: 0;
+  font-size: 1rem;
+  padding: 0.75em 1em;
+  background-color: #fff;
+  border: 2px solid vars.$primary-color;
+  border-radius: 7.5px;
+  width: 80%;
+}
+
+.filters-container .price-filter .price-container {
+  @include mixins.flex(space-between, center);
+  width: 100%;
+  .from-container,
+  .to-container {
+    @include mixins.flex(center, flex-start, column);
+    width: 47.5%;
+    span {
+      color: #5e5e5e;
+      font-size: 0.8rem;
+    }
+    input[type="text"] {
+      display: block;
+      width: 100%;
+      border: 1px solid #c4c4c4;
+      border-radius: 5px;
+      font-size: 1rem;
+      padding: 0.25em;
+      text-align: center;
+      outline: none;
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+.filters-container .price-filter > button {
+  @include mixins.button(
+    #fff,
+    vars.$primary-color,
+    0.9rem,
+    0.3em 1em,
+    5px,
+    2px solid vars.$primary-color,
+    100%
+  );
+  margin-top: 5px;
+  transition: 0.3s background-color, 0.2s border-color;
+  &:hover {
+    background-color: vars.$secondary-color;
+    border-color: vars.$secondary-color;
+  }
+}

@@ -1,0 +1,38 @@
+@use '../../../vars';
+@use '../../../mixins';
+
+section.all-tours-content-container .all-tours-info .filters {
+  @include mixins.flex(space-between, center);
+  z-index: 4;
+  h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-right: 2rem;
+  }
+  .filters-container > button {
+    @include mixins.button(
+      #000,
+      #fff,
+      0.9rem,
+      0.35em 1em,
+      7.5px,
+      2px solid vars.$primary-color
+    );
+    transition: background-color 0.2s, color 0.2s;
+    &.selected {
+      background-color: vars.$primary-color;
+      color: #fff;
+    }
+    &:not(:last-of-type) {
+      margin-right: 1.5rem;
+    }
+    &:hover {
+      background-color: vars.$secondary-color;
+      color: #fff;
+    }
+  }
+  .filters-container {
+    position: relative;
+  }
+}

@@ -1,0 +1,46 @@
+@use '../../../vars';
+@use '../../../mixins';
+
+header {
+  position: relative;
+  background-color: #f7f7f7;
+}
+
+header .main-container {
+  @include mixins.flex(center, center);
+}
+
+header h1.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  span {
+    color: vars.$primary-color;
+  }
+}
+
+header nav {
+  min-width: 40%;
+  ul {
+    @include mixins.flex(space-between, center);
+    list-style: none;
+    li {
+      font-size: 1rem;
+      padding: 1.1em 0;
+    }
+    li a {
+      color: #000;
+      transition: 0.2s color;
+      position: relative;
+    }
+    li a:hover {
+      color: vars.$primary-color;
+    }
+    li.selected a {
+      color: vars.$primary-color;
+    }
+  }
+}
