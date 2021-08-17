@@ -1,11 +1,38 @@
 import { useState } from "react";
+import axios from 'axios';
 
 const TourBooking = ({ prices }) => {
   const { features: standardFeatures, price: standardPrice } = prices.standard;
   const { features: premiumFeatures, price: premiumPrice } = prices.premium;
+  const [plans, setPlans] = useState({ standard: true, premium: false });
   const [nameInput, setNameInput] = useState('');
   const [phoneInput, setPhoneInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
+
+  const optionClickHandler = (e) => {
+    if (e.currentTarget.classList.contains('standard')) {
+      setPlans({ standard: true, premium: false })
+    } else {
+      setPlans({ standard: false, premium: true })
+    }
+  }
+
+  const bookTour = () => {
+    try {
+      axios.post('https://traveler-travel-agency.herokuapp.com/api/v1/bookTour', {
+        fullName: nameInput,
+        phone: phoneInput,
+        email: emailInput,
+        plan: (plans.standard ? 'standard' : 'premium')
+      })
+      setPlans({ standard: true, premium: false });
+      setNameInput('');
+      setPhoneInput('');
+      setEmailInput('');
+    } catch(err) {
+      console.log(err);
+    }
+  }
 
   return (
     <section className="tour-booking">
@@ -15,14 +42,16 @@ const TourBooking = ({ prices }) => {
           <div className="booking-container">
             <div className="booking">
               <div className="options">
-                <button className="standard selected">
+                <button className={'standard' + (plans.standard ? ' selected' : '')}
+                onClick={(e) => optionClickHandler(e)}>
                   <div className="info">
                     <h4>Standard</h4>
                     <h5>{standardFeatures}</h5>
                   </div>
                   <h4 className="cost">${standardPrice}</h4>
                 </button>
-                <button className="premium">
+                <button className={'premium' + (plans.premium ? ' selected' : '')}
+                onClick={(e) => optionClickHandler(e)}>
                   <div className="info">
                     <h4>Premium</h4>
                     <h5>{premiumFeatures}</h5>
@@ -36,7 +65,7 @@ const TourBooking = ({ prices }) => {
                 <input type="email" placeholder="Email" value={emailInput} onChange={(e) => setEmailInput(e.target.value)} />
               </form>
             </div>
-            <button>Book Tour</button>
+            <button type="button" onClick={bookTour}>Book Tour</button>
           </div>
         </div>
       </div>
