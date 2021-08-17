@@ -47,7 +47,7 @@ a {
 }
 
 .show {
-  display: block;
+  display: block !important;
 }
 
 .hide {
@@ -63,6 +63,29 @@ a {
   }
   100% {
     background-color: #cacaca;
+  }
+}
+@keyframes initialShow {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
   }
 }
 header {
@@ -971,7 +994,7 @@ section.tour-showcase .main-container {
 section.tour-showcase .main-container::after {
   content: "";
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.075);
   top: 0;
   left: 0;
   right: 0;
@@ -984,15 +1007,103 @@ section.tour-showcase .images-container {
   min-height: 700px;
   height: 1px;
 }
+section.tour-showcase .images-container .slide {
+  height: 100%;
+  width: 100%;
+  display: none;
+  animation: fade 0.5s forwards;
+}
 section.tour-showcase .images-container .loader {
   height: 100%;
   width: 100%;
   animation: pulse 1.5s forwards infinite;
 }
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+section.tour-showcase .slider {
+  position: absolute;
+  top: 0;
+  width: 20%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.2s opacity ease-in-out;
+  cursor: pointer;
+  z-index: 2;
+  animation: initialShow 3s;
+}
+section.tour-showcase .slider:hover {
+  opacity: 1;
+}
+section.tour-showcase .slider svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.9rem;
+  color: #fff;
+}
+section.tour-showcase .slider.previous-slider {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+  left: 0;
+}
+section.tour-showcase .slider.previous-slider svg {
+  left: 10%;
+}
+section.tour-showcase .slider.next-slider {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+  right: 0;
+}
+section.tour-showcase .slider.next-slider svg {
+  right: 10%;
+}
+
+section.tour-showcase .images-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+section.tour-showcase .images-dots .dot {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+section.tour-showcase .images-dots .dot:not(:last-of-type) {
+  margin-right: 1.5rem;
+}
+section.tour-showcase .images-dots .dot.current {
+  transform: scale(1.2);
+  position: relative;
+}
+section.tour-showcase .images-dots .dot.current::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: inherit;
+  background-color: #1aa483;
+}
 
 section.tour-showcase .tour-info-container {
   position: absolute;
-  top: 15%;
+  top: 7.5%;
   left: 20%;
   transform: translate(-20%, -15%);
   background-color: rgba(0, 0, 0, 0.45);
