@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { NotificationContext } from "../../../App";
 import axios from 'axios';
 
 const TourBooking = ({ prices }) => {
@@ -8,6 +9,7 @@ const TourBooking = ({ prices }) => {
   const [nameInput, setNameInput] = useState('');
   const [phoneInput, setPhoneInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
+  const setNotification = useContext(NotificationContext);
 
   const optionClickHandler = (e) => {
     if (e.currentTarget.classList.contains('standard')) {
@@ -17,20 +19,31 @@ const TourBooking = ({ prices }) => {
     }
   }
 
-  const bookTour = () => {
+  const bookTour = async () => {
     try {
-      axios.post('https://traveler-travel-agency.herokuapp.com/api/v1/bookTour', {
+      await axios.post('https://traveler-travel-agency.herokuapp.com/api/v1/bookTour', {
         fullName: nameInput,
         phone: phoneInput,
         email: emailInput,
         plan: (plans.standard ? 'standard' : 'premium')
+      })
+      setNotification({ 
+        isShown: true,
+        status: 'success',
+        msgTitle: 'Booking successful',
+        msg: 'Tour has been booked! Check your email for more details.'
       })
       setPlans({ standard: true, premium: false });
       setNameInput('');
       setPhoneInput('');
       setEmailInput('');
     } catch(err) {
-      console.log(err);
+      setNotification({ 
+        isShown: true,
+        status: 'error',
+        msgTitle: 'Booking failed',
+        msg: 'Something went wrong. Try again sometime!'
+      })
     }
   }
 

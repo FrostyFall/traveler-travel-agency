@@ -42,12 +42,16 @@ const TourShowcase = ({ imgURLs, title, country, city }) => {
         <div className="images-container">
           {slides ? slides : <div className="loader" />}
         </div>
-        <div className="slider previous-slider" onClick={previousSlide}>
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </div>
-        <div className="slider next-slider" onClick={nextSlide}>
-          <FontAwesomeIcon icon={faChevronRight} />
-        </div>
+        {slides &&
+          <>
+            <div className="slider previous-slider" onClick={previousSlide}>
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </div>
+            <div className="slider next-slider" onClick={nextSlide}>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </div>
+          </>
+        }
         <div className="tour-info-container">
           <h2>{country}</h2>
           <h3>{title}, {city}</h3>
