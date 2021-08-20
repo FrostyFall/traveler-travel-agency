@@ -6,12 +6,12 @@ import MostPopTours from '../components/homePage/mostPopTours';
 import AgencyReviews from '../components/homePage/agencyReviews';
 import Images from '../components/homePage/images';
 
-const HomePage = () => {
-  const { currentPage, setCurrentPage } = useContext(CurrentPageContext);
+function HomePage() {
+  const { setCurrentPage } = useContext(CurrentPageContext);
 
   useEffect(() => {
     setCurrentPage({ 'home': true, 'all-tours': false })
-  }, [])
+  }, [setCurrentPage])
   
   return (
     <>

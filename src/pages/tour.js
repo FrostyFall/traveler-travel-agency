@@ -7,20 +7,16 @@ import TourExperience from "../components/tourPage/tourExperience";
 import TourReviews from "../components/tourPage/tourReviews";
 import TourBooking from "../components/tourPage/tourBooking";
 
-const TourPage = () => {
+function TourPage() {
   const { tourId } = useParams();
-  const [data, setData] = useFetch(`https://traveler-travel-agency.herokuapp.com/api/v1/all-tours/${tourId}`);
-  const { data: response, isFetching, isError } = data;
-  const { title, city, country, experience, imgURLs, prices, reviews, isFound } = response;
-  const { currentPage, setCurrentPage } = useContext(CurrentPageContext);
+  const { data } = useFetch(`https://traveler-travel-agency.herokuapp.com/api/v1/all-tours/${tourId}`);
+  const { data: response } = data;
+  const { title, city, country, experience, imgURLs, prices, reviews } = response;
+  const { setCurrentPage } = useContext(CurrentPageContext);
 
   useEffect(() => {
     setCurrentPage({ 'home': false, 'all-tours': false })
-  }, [])
-  
-  useEffect(() => {
-    console.log(response)
-  }, [data])
+  }, [setCurrentPage])
   
   return (
     <main>

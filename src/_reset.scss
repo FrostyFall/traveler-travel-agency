@@ -12,7 +12,6 @@ body {
   font-family: "Lato", sans-serif;
   line-height: 1.4;
   background-color: #fff;
-  background-color: #333;
 }
 
 section {
@@ -53,6 +52,19 @@ a {
 
 .hide {
   display: none;
+}
+
+.tour-preview-loader {
+  position: relative;
+  width: 31%;
+  height: 500px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border-radius: 5px;
+  animation: pulse 2s forwards infinite;
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 @keyframes pulse {

@@ -3,7 +3,8 @@ import { QueryContext } from '../allToursContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-const RatingsFilter = ({ isShown }) => {
+function RatingsFilter({ isShown, filterRef }) {
+  const setQueries = useContext(QueryContext);
   const [checkedScores, setCheckedScores] = useState({ 
     '12345': true,
     '5': false,
@@ -12,11 +13,11 @@ const RatingsFilter = ({ isShown }) => {
     '2': false,
     '1': false
    });
-  const setQueries = useContext(QueryContext);
 
   const checkFilter = (queryStr) => {
     setCheckedScores(prevState => {
       let newState = {};
+
       (queryStr === '12345') ? newState = {
         '5': false,
         '4': false,
@@ -25,22 +26,23 @@ const RatingsFilter = ({ isShown }) => {
         '1': false
        } : newState = { ...prevState, '12345': false };
       newState[queryStr] = !prevState[queryStr];
+
       return newState;
     });
   }
 
   const btnClickHandler = () => {
     let query = '';
+
     for (let score in checkedScores) {
-      if (checkedScores[score]) {
-        query += score;
-      }
+      if (checkedScores[score]) query += score;
     }
+    
     setQueries(prevState => ({ ...prevState, scores: query}));
   }
 
   return (
-    <div className={`ratings-filter ${isShown ? 'show' : 'hide'}`}>
+    <div className={`ratings-filter ${isShown ? 'show' : 'hide'}`} ref={filterRef}>
       <label className="ratings-row">
         <input type="checkbox" value="12345" onChange={() => checkFilter('12345')} checked={checkedScores['12345']}/>
         <span>All Ratings</span>

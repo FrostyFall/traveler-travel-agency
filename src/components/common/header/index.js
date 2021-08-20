@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CurrentPageContext } from '../../../App';
 
-const Header = () => {
-  const { currentPage, setCurrentPage } = useContext(CurrentPageContext);
+function Header() {
+  const { currentPage } = useContext(CurrentPageContext);
 
   return (
     <header>
@@ -12,10 +12,10 @@ const Header = () => {
         <nav>
           <ul>
             <li className={currentPage['home'] ? 'selected': ''}>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={() => window.scrollTo(0,0)}>Home</Link>
             </li>
             <li className={currentPage['all-tours'] ? 'selected': ''}>
-              <Link to="/all-tours">All Tours</Link>
+              <Link to="/all-tours" onClick={() => window.scrollTo(0,0)}>All Tours</Link>
             </li>
           </ul>
         </nav>

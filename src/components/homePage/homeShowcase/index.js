@@ -6,28 +6,24 @@ import showcaseImage from '../../../assets/images/showcase.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-const HomeShowcase = () => {
+function HomeShowcase() {
   const history = useHistory();
-  const [data, setData] = useFetch('https://traveler-travel-agency.herokuapp.com/api/v1/locations');
+  const { data } = useFetch('https://traveler-travel-agency.herokuapp.com/api/v1/locations');
   const { data: response, isFetching, isError } = data;
   const [selected, setSelected] = useState('');
-  const { selectedCountry, setSelectedCountry } = useContext(CountryContext);
+  const { setSelectedCountry } = useContext(CountryContext);
+
+  useEffect(() => {
+    if (response.length !== 0) setSelected(response[0].title);
+  }, [data, response])
+
+  useEffect(() => {
+    setSelectedCountry(null);
+  }, [setSelectedCountry])
 
   const optionChangeHandler = (e) => {
     setSelected(e.currentTarget.value);
   }
-
-  useEffect(() => {
-    return () => {
-      setSelectedCountry(null);
-    }
-  }, [])
-
-  useEffect(() => {
-    if (response.length !== 0) {
-      setSelected(response[0].title)
-    }
-  }, [data])
 
   const btnClickHandler = () => {
     setSelectedCountry(selected.replaceAll(' ', '+'));
@@ -44,6 +40,8 @@ const HomeShowcase = () => {
           <div className="custom-select">
             <FontAwesomeIcon icon={faChevronDown} />
             <select name="location" id="location" onChange={(e) => optionChangeHandler(e)} value={selected}>
+              {isFetching && <option>Fetching...</option>}
+              {isError && <option>Error. Try later</option>}
               {!isFetching && !isError &&
                 response.map((location) => {
                   return (
@@ -59,5 +57,7 @@ const HomeShowcase = () => {
     </section>
   )
 }
+
+
 
 export default HomeShowcase;

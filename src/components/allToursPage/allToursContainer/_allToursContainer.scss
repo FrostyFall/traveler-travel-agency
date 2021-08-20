@@ -27,6 +27,11 @@ section.all-tours-content-container .all-tours {
   row-gap: 3rem;
 }
 
+section.all-tours-content-container .all-tours.few {
+  @include mixins.flex(flex-start, center);
+  column-gap: 2.9rem;
+}
+
 section.all-tours-content-container .all-tours-container > button {
   @include mixins.button(#fff, vars.$primary-color, 1rem, 1em, 5px, none, 100%);
   margin-top: 3rem;

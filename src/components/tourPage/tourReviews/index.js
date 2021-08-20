@@ -1,13 +1,13 @@
 import TourReview from "../tourReview";
 
-const TourReviews = ({ reviews }) => {
+function TourReviews({ reviews }) {
   return (
     <section className="tour-reviews">
       <div className="main-container">
         <h3 className="main-heading">What Our Clients Say About It</h3>
         <div className="tour-reviews-container">
-          {reviews && reviews.map(singleReview => {
-            return <TourReview {...singleReview} />
+          {reviews.map((singleReview, index) => {
+            return <TourReview {...singleReview} key={index} />
           })}
         </div>
       </div>

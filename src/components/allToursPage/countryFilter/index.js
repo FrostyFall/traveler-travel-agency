@@ -3,83 +3,78 @@ import { QueryContext } from '../allToursContainer';
 import { CountryContext } from '../../../App';
 import useFetch from '../../../hooks/useFetch';
 
-const CountryFilter = ({ isShown }) => {
-  const { selectedCountry, setSelectedCountry } = useContext(CountryContext);
-  const [checkedLocations, setCheckedLocations] = useState({ 
-    'all': true
-   });
-  const [data, setData] = useFetch('https://traveler-travel-agency.herokuapp.com/api/v1/locations');
-  const { data: response, isFetching, isError } = data;
-  const [locations, setLocations] = useState([]);
+function CountryFilter({ isShown, filterRef }) {
   const setQueries = useContext(QueryContext);
+  const { selectedCountry } = useContext(CountryContext);
+  const [checkedLocations, setCheckedLocations] = useState({ 'all': true });
+  const { data } = useFetch('https://traveler-travel-agency.herokuapp.com/api/v1/locations');
+
+  useEffect(() => {
+    if (!data.isFetching && !data.isError) {
+      setCheckedLocations(() => {
+        let newLocs = { 'all': true };
+
+        data.data.forEach(location => newLocs[location.title] = false);
+        if (selectedCountry) {
+          for (let location in newLocs) newLocs[location] = false;
+          newLocs[selectedCountry.replaceAll('+', ' ')] = true;
+        }
+        
+        return newLocs;
+      })
+    }
+  }, [data, selectedCountry])
 
   const checkFilter = (queryStr) => {
     setCheckedLocations(prevState => {
       let newState = {};
-      if (queryStr === 'all') {
-        for (let location in checkedLocations) {
-          if (location !== 'all') newState[location] = false;
-        }
-      } else {
-        newState = { ...prevState, 'all': false }
-      }
+
+      newState = { ...prevState, 'all': false };
       newState[queryStr] = !prevState[queryStr];
+      if (Object.values(newState).every(val => !val)) {
+        newState = { ...newState, 'all': true }
+      }
+
+      return newState;
+    });
+  }
+
+  const resetCheckedLocations = () => {
+    setCheckedLocations(() => {
+      let newState = {};
+
+      for (let location in checkedLocations) {
+        if (location !== 'all') newState[location] = false;
+      }
+      newState['all'] = true;
+
       return newState;
     });
   }
 
   const btnClickHandler = () => {
     let query = '';
+
     for (let location in checkedLocations) {
       if (checkedLocations[location]) {
         query += location.replaceAll(' ', '+') + ',';
       }
     }
     query = query.slice(0, query.length - 1);
+
     setQueries(prevState => ({ ...prevState, country: (query === 'all') ? '' : query}));
   }
 
-  useEffect(() => {
-    setCheckedLocations(prevState => {
-      let newLocs = { 'all': true };
-      response.forEach(location => {
-        newLocs[location.title] = false
-      })
-      if (selectedCountry) {
-        for (let location in newLocs) {
-          newLocs[location] = false;
-        }
-        newLocs[selectedCountry.replaceAll('+', ' ')] = true;
-      }
-      return newLocs;
-    })
-  }, [data])
-
-  useEffect(() => {
-    setLocations(() => {
-      return response.map(location => {
-        return (
-          <label className="country-row" key={location._id}>
-            <input type="checkbox" value={location.title} onChange={() => checkFilter(location.title)}
-            checked={checkedLocations[location.title]} />
-            <span>{location.title}</span>
-          </label>
-        )
-      })
-    })
-  }, [checkedLocations])
-
   return (
-    <div className={`country-filter ${isShown ? 'show' : 'hide'}`}>
+    <div className={`country-filter ${isShown ? 'show' : 'hide'}`} ref={filterRef}>
       <div className="countries-container">
         <label className="country-row">
-          <input type="checkbox" value="all" onChange={() => checkFilter('all')}
+          <input type="checkbox" value="all" onChange={() => resetCheckedLocations()}
           checked={checkedLocations['all']} />
           <span>All Countries</span>
         </label>
-        {locations}
-        {/* {!isFetching && !isError && 
-          response.map(location => {
+        {(Object.keys(checkedLocations).length - 1 === data.data.length) && 
+          data.data.map(location => {
             return (
               <label className="country-row" key={location._id}>
                 <input type="checkbox" value={location.title} onChange={() => checkFilter(location.title)}
@@ -88,7 +83,7 @@ const CountryFilter = ({ isShown }) => {
               </label>
             )
           })
-        } */}
+        }
       </div>
       <button type="button" onClick={btnClickHandler}>Apply</button>
     </div>

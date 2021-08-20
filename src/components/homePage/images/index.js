@@ -2,7 +2,7 @@ import img_1 from '../../../assets/images/img1.jpg';
 import img_2 from '../../../assets/images/img2.jpg';
 import img_3 from '../../../assets/images/img3.jpg';
 
-const Images = () => {
+function Images() {
   return (
     <div className="images" id="images">
       <div className="main-container">

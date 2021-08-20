@@ -1,42 +1,41 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { NotificationContext } from '../../../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faTimes, faExclamation } from '@fortawesome/free-solid-svg-icons';
 
-const Notification = ({ isShown, status, msgTitle, msg }) => {
+function Notification({ isShown, status, msgTitle, msg }) {
   const setNotification = useContext(NotificationContext);
-  const [timerId, setTimerId] = useState(null);
+  const timerId = useRef(null);
 
-  const timeOut = () => {
-    setNotification(prevState => (
-      { ...prevState, isShown: false }
-    ))
-  }
+  useEffect(() => {
+    if (isShown) {
+      const id = setTimeout(() => {
+        setNotification(prevState => ({ ...prevState, isShown: false }));
+      }, 8000);
+      timerId.current = id;
+      
+      return () => {
+        clearTimeout(timerId.current);
+      }
+    }
+  }, [isShown, setNotification])
 
   const closeNotification = () => {
     setNotification(prevState => ({ ...prevState, isShown: false }));
-    clearTimeout(timerId);
+    clearTimeout(timerId.current);
   }
-
-  useEffect(() => {
-    if (isShown === true) {
-      const id = setTimeout(timeOut, 4000);
-      setTimerId(id);
-      return () => {
-        clearTimeout(timerId);
-      }
-    }
-  }, [isShown])
 
   return (
     <div className={'notification-container' + (isShown ? ' show-notification' : '')}>
       <div className="status-container">
         <div className={'status-icon-container' + (
           status === 'success' ? ' success' : 
-          status === 'error' ? ' error' : ''
+          status === 'error' ? ' error' : 
+          status === 'warning' ? ' warning' : ''
         )}>
           {status === 'success' && <FontAwesomeIcon icon={faCheck}/>}
           {status === 'error' && <FontAwesomeIcon icon={faTimes}/>}
+          {status === 'warning' && <FontAwesomeIcon icon={faExclamation}/>}
         </div>
         <div className="status-msg-container">
           <h5 className="msg-title">{msgTitle}</h5>

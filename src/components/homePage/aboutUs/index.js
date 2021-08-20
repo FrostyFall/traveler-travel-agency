@@ -1,6 +1,6 @@
 import aboutUsImage from '../../../assets/images/about_us.jpg';
 
-const AboutUs = () => {
+function AboutUs() {
   return (
     <section className="about-us" id="about-us">
       <div className="main-container">

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
-const TourShowcase = ({ imgURLs, title, country, city }) => {
+function TourShowcase({ imgURLs, title, country, city }) {
   const [slides, setSlides] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0); 
 
@@ -12,7 +12,7 @@ const TourShowcase = ({ imgURLs, title, country, city }) => {
         return (
           imgURLs.map((image, index) => {
             return (
-              <div className={'slide' + ((index === currentSlide) ? ' show' : '')}>
+              <div key={index} className={'slide' + ((index === currentSlide) ? ' show' : '')}>
                 <img src={image} alt={`${title} View ${index + 1}`} />
               </div>
             )
@@ -20,19 +20,17 @@ const TourShowcase = ({ imgURLs, title, country, city }) => {
         )
       })
     }
-  }, [imgURLs, currentSlide])
+  }, [imgURLs, title, currentSlide])
 
   const previousSlide = () => {
     setCurrentSlide(prevState => {
-      if (currentSlide === 0) return slides.length - 1;
-      return prevState - 1;
+      return (currentSlide === 0) ? slides.length - 1 : prevState - 1;
     })
   }
 
   const nextSlide = () => {
     setCurrentSlide(prevState => {
-      if (currentSlide === slides.length - 1) return 0;
-      return prevState + 1;
+      return (currentSlide === slides.length - 1) ? 0 : prevState + 1;
     })
   }
 
@@ -62,9 +60,9 @@ const TourShowcase = ({ imgURLs, title, country, city }) => {
 }
 
 TourShowcase.defaultProps = {
-  title: 'Loading...',
-  country: 'Loading...',
-  city: 'Loading...'
+  title: 'Tour title loading...',
+  country: 'Country loading...',
+  city: 'City loading...'
 };
 
 export default TourShowcase;
