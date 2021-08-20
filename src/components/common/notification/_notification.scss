@@ -20,7 +20,7 @@ div.notification-container {
 }
 
 div.notification-container .status-container {
-  @include mixins.flex(center, flex-start);
+  @include mixins.flex(flex-start, flex-start);
   width: 90%;
 }
 
@@ -45,6 +45,12 @@ div.notification-container .status-icon-container {
       color: #1aa483;
     }
   }
+  &.warning {
+    background-color: rgba(255, 138, 0, 0.26);
+    svg {
+      color: #a45c1a;
+    }
+  }
   &.error {
     background-color: rgba(255, 0, 0, 0.26);
     svg {
@@ -54,6 +60,7 @@ div.notification-container .status-icon-container {
 }
 
 div.notification-container .status-msg-container {
+  min-width: 200px;
   h5 {
     font-size: inherit;
     font-weight: 400;

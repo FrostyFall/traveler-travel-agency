@@ -1,28 +1,30 @@
 import axios from "axios";
 
-const fetchTourPreviews = async (url, queries, setData, isSkip = false) => {
+async function fetchTourPreviews(url, queries, setData, isSkip = false) {
   try {
-    // Get Query String
+    // Make query string
     let queryArr = [];
+
     for (let query in queries) {
       if (queries[query] !== null && queries[query] !== '') queryArr.push(`${query}=${queries[query]}`);
     }
+
     const queryString = queryArr.join('&');
 
-    console.log('API Call with query string ' + queryString);
+    // Fetch data
+    const res = await axios.get(`${url}${isSkip ? '&' + queryString : '?' + queryString}`);
 
-    // setData((prevState) => ({ ...prevState, isFetching: true }));
-    const res = await axios.get(`${url}${isSkip ? '&' + queryString : '?' + queryString}`)
     if (isSkip) {
       const { docs, retrievedDocs, documentsCount } = res.data;
+
       setData(prevState => {
-        return { data: {retrievedDocs: retrievedDocs, documentsCount: documentsCount, docs: prevState.data.docs.concat(docs)}, isFetching: false, isError: false }
+        return { data: {retrievedDocs: retrievedDocs, documentsCount: documentsCount, docs: prevState.data.docs.concat(docs)}, isError: false }
       })
     } else {
-      setData({ data: { ...res.data }, isFetching: false, isError: false });
+      setData({ data: { ...res.data }, isError: false });
     }
   } catch(err) {
-    // setData(({ data: [], isFetching: false, isError: true }));
+    setData(({ data: [], isError: true }));
   }
 }
 

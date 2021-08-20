@@ -3,12 +3,12 @@ import { CurrentPageContext } from '../App';
 import AllToursShowcase from '../components/allToursPage/allToursShowcase';
 import AllToursContainer from '../components/allToursPage/allToursContainer';
 
-const AllTours = () => {
-  const { currentPage, setCurrentPage } = useContext(CurrentPageContext);
+function AllTours() {
+  const { setCurrentPage } = useContext(CurrentPageContext);
 
   useEffect(() => {
     setCurrentPage({ 'home': false, 'all-tours': true })
-  }, [])
+  }, [setCurrentPage])
 
   return (
     <>

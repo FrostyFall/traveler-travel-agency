@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import useFetch from "../../../hooks/useFetch";
 import TourPreview from '../../common/tourPreview';
 
-const MostPopTours = () => {
-  const [data, setData] = useFetch('https://traveler-travel-agency.herokuapp.com/api/v1/popular-tours-previews');
+function MostPopTours() {
+  const { data } = useFetch('https://traveler-travel-agency.herokuapp.com/api/v1/popular-tours-previews');
   const { data: response, isFetching, isError } = data;
 
   return (
@@ -14,6 +14,13 @@ const MostPopTours = () => {
           <Link to="/all-tours">Show More</Link>
         </div>
         <div className="tours">
+          {(isFetching || isError) && (
+            <>
+              <div className='tour-preview-loader'/>
+              <div className='tour-preview-loader'/>
+              <div className='tour-preview-loader'/>
+            </>
+          )}
           {!isFetching && !isError &&
             response.map(tour => {
               const { title, country, city, score, fromPrice, imgURL, fullDetails } = tour;

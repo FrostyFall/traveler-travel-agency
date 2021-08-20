@@ -1,8 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { NotificationContext } from "../../../App";
+import validateInputs from '../../../functions/validateInputs';
 import axios from 'axios';
 
-const TourBooking = ({ prices }) => {
+function TourBooking({ prices }) {
   const { features: standardFeatures, price: standardPrice } = prices.standard;
   const { features: premiumFeatures, price: premiumPrice } = prices.premium;
   const [plans, setPlans] = useState({ standard: true, premium: false });
@@ -10,6 +11,14 @@ const TourBooking = ({ prices }) => {
   const [phoneInput, setPhoneInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const setNotification = useContext(NotificationContext);
+  const [isDelayExpired, setIsDelayExpired] = useState(true);
+  const delayId = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(delayId.current);
+    } 
+  }, [])
 
   const optionClickHandler = (e) => {
     if (e.currentTarget.classList.contains('standard')) {
@@ -20,29 +29,54 @@ const TourBooking = ({ prices }) => {
   }
 
   const bookTour = async () => {
-    try {
-      await axios.post('https://traveler-travel-agency.herokuapp.com/api/v1/bookTour', {
-        fullName: nameInput,
-        phone: phoneInput,
-        email: emailInput,
-        plan: (plans.standard ? 'standard' : 'premium')
-      })
+    if (isDelayExpired) {
+      const validated = validateInputs(nameInput, phoneInput, emailInput);
+
+      if (!validated.name || !validated.phone || !validated.email) {
+        setNotification({ 
+          isShown: true,
+          status: 'error',
+          msgTitle: 'Validation failed',
+          msg: (!validated.name) ? 'Name is incorrect. Name should only contain characters.'
+          : (!validated.phone) ? 'Phone is incorrect. Use pattern +XXXX(1-4) YYYY(1-4) ZZZNNNN.'
+          : 'Email address is incorrect.'
+        })
+      } else {
+        setIsDelayExpired(false);
+        const id = setTimeout(() => setIsDelayExpired(true), 10000);
+        delayId.current = id;
+        try {
+          await axios.post('https://traveler-travel-agency.herokuapp.com/api/v1/bookTour', {
+            fullName: nameInput,
+            phone: phoneInput,
+            email: emailInput,
+            plan: (plans.standard ? 'standard' : 'premium')
+          })
+          setNotification({ 
+            isShown: true,
+            status: 'success',
+            msgTitle: 'Booking successful',
+            msg: 'Tour has been booked! Check your email for more details.'
+          })
+          setPlans({ standard: true, premium: false });
+          setNameInput('');
+          setPhoneInput('');
+          setEmailInput('');
+        } catch(err) {
+          setNotification({ 
+            isShown: true,
+            status: 'error',
+            msgTitle: 'Booking failed',
+            msg: 'Something went wrong. Try again sometime!'
+          })
+        }
+      }
+    } else {
       setNotification({ 
         isShown: true,
-        status: 'success',
-        msgTitle: 'Booking successful',
-        msg: 'Tour has been booked! Check your email for more details.'
-      })
-      setPlans({ standard: true, premium: false });
-      setNameInput('');
-      setPhoneInput('');
-      setEmailInput('');
-    } catch(err) {
-      setNotification({ 
-        isShown: true,
-        status: 'error',
-        msgTitle: 'Booking failed',
-        msg: 'Something went wrong. Try again sometime!'
+        status: 'warning',
+        msgTitle: 'Cannot send another request',
+        msg: 'You\'ve sent request recently. Try again sometime!'
       })
     }
   }

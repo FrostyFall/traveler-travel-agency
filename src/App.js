@@ -11,7 +11,7 @@ export const CurrentPageContext = React.createContext();
 export const CountryContext = React.createContext();
 export const NotificationContext = React.createContext();
 
-const App = () => {
+function App() {
   const [currentPage, setCurrentPage] = useState({ 'home': false, 'all-tours': false });
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [notification, setNotification] = useState({});

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { HashLink as Link } from 'react-router-hash-link';
 
-const Footer = () => {
+function Footer() {
   return (
     <footer>
       <div className="footer-container">
@@ -11,12 +11,12 @@ const Footer = () => {
             <h3>Social</h3>
             <ul>
               <li className="facebook-icon">
-                <a href="https://facebook.com" target="_blank">
+                <a href="https://facebook.com" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faFacebookSquare} />
                 </a>
               </li>
               <li className="twitter-icon">
-                <a href="https://twitter.com" target="_blank">
+                <a href="https://twitter.com" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faTwitterSquare} />
                 </a>
               </li>

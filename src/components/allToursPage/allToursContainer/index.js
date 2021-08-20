@@ -6,8 +6,8 @@ import fetchTourPreviews from '../../../functions/fetchTourPreviews';
 
 export const QueryContext = React.createContext();
 
-const AllToursContainer = () => {
-  const { selectedCountry, setSelectedCountry } = useContext(CountryContext);
+function AllToursContainer() {
+  const { selectedCountry } = useContext(CountryContext);
   const [queries, setQueries] = useState({ minPrice: null, maxPrice: null, scores: null, country: (selectedCountry ? selectedCountry : null) });
   const [data, setData] = useState({ 
     data: { retrievedDocs: 0, documentsCount: 0, docs: [] }, 
@@ -15,6 +15,7 @@ const AllToursContainer = () => {
     isError: false 
   });
   const [skipCount, setSkipCount] = useState(0);
+  const [totalDocuments, setTotalDocuments] = useState(0);
   const [totalRetrievedDocs, setTotalRetrievedDocs] = useState(0);
   const [showMore, setShowMore] = useState(true);
 
@@ -25,12 +26,15 @@ const AllToursContainer = () => {
   }, [queries])
 
   useEffect(() => {
+    (totalRetrievedDocs < totalDocuments) ? setShowMore(true) : setShowMore(false);
+  }, [totalRetrievedDocs, totalDocuments])
+
+  useEffect(() => {
     if (!data.isFetching && !data.isError && data.data.docs.length !== 0) {
       const { documentsCount, retrievedDocs } = data.data;
-      setTotalRetrievedDocs(prevState => prevState + retrievedDocs);
 
-      const newTotalRetrievedDocs = totalRetrievedDocs + retrievedDocs;
-      (newTotalRetrievedDocs < documentsCount) ? setShowMore(true) : setShowMore(false);
+      setTotalDocuments(documentsCount);
+      setTotalRetrievedDocs(prevState => prevState + retrievedDocs);
     } else {
       setTotalRetrievedDocs(0);
       setShowMore(false);
@@ -52,7 +56,7 @@ const AllToursContainer = () => {
               <Filters />
             </QueryContext.Provider>
           </div>
-          <div className="all-tours">
+          <div className={(data.data.docs && (data.data.docs.length < 3) ? 'all-tours few' : 'all-tours')}>
             {data.data.docs && data.data.docs.map(tour => {
               const { title, country, city, score, fromPrice, imgURL, fullDetails } = tour;
               const props = {

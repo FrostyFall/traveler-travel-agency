@@ -1,6 +1,6 @@
 import DiscoverToursImage from '../../../assets/images/discover-tours.jpg';
 
-const AllToursShowcase = () => {
+function AllToursShowcase() {
   return (
     <section className="all-tours-showcase">
       <div className="main-container">

@@ -11,7 +11,6 @@ body {
   font-family: "Lato", sans-serif;
   line-height: 1.4;
   background-color: #fff;
-  background-color: #333;
 }
 
 section {
@@ -52,6 +51,19 @@ a {
 
 .hide {
   display: none;
+}
+
+.tour-preview-loader {
+  position: relative;
+  width: 31%;
+  height: 500px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border-radius: 5px;
+  animation: pulse 2s forwards infinite;
+}
+.tour-preview-loader:hover {
+  transform: scale(1.02);
 }
 
 @keyframes pulse {
@@ -379,7 +391,7 @@ div.notification-container.show-notification {
 div.notification-container .status-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   width: 90%;
 }
@@ -406,6 +418,12 @@ div.notification-container .status-icon-container.success {
 div.notification-container .status-icon-container.success svg {
   color: #1aa483;
 }
+div.notification-container .status-icon-container.warning {
+  background-color: rgba(255, 138, 0, 0.26);
+}
+div.notification-container .status-icon-container.warning svg {
+  color: #a45c1a;
+}
 div.notification-container .status-icon-container.error {
   background-color: rgba(255, 0, 0, 0.26);
 }
@@ -413,6 +431,9 @@ div.notification-container .status-icon-container.error svg {
   color: #a41a1a;
 }
 
+div.notification-container .status-msg-container {
+  min-width: 200px;
+}
 div.notification-container .status-msg-container h5 {
   font-size: inherit;
   font-weight: 400;
@@ -802,6 +823,14 @@ section.all-tours-content-container .all-tours {
   align-items: center;
   flex-wrap: wrap;
   row-gap: 3rem;
+}
+
+section.all-tours-content-container .all-tours.few {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 2.9rem;
 }
 
 section.all-tours-content-container .all-tours-container > button {
@@ -1259,9 +1288,9 @@ section.tour-experience .image-container {
 section.tour-experience .image-container img {
   width: 100%;
 }
-section.tour-experience .image-container .loader {
+section.tour-experience .image-container .experience-loader {
   width: 100%;
-  height: 300px;
+  height: 450px;
   animation: pulse 1.5s forwards infinite;
 }
 

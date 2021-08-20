@@ -1,22 +1,20 @@
 import { useContext, useState } from 'react';
 import { QueryContext } from '../allToursContainer';
 
-const PriceFilter = ({ isShown }) => {
+function PriceFilter({ isShown, filterRef }) {
+  const setQueries = useContext(QueryContext);
   const [fromInput, setFromInput] = useState('$9');
   const [toInput, setToInput] = useState('$199');
-  const setQueries = useContext(QueryContext);
 
   const controlFromInput = (e) => {
     setFromInput(() => {
-      if (e.target.value === '') return '$';
-      else return e.target.value;
+      return (e.target.value === '') ? '$' : e.target.value;
     });
   }
 
   const controlToInput = (e) => {
     setToInput(() => {
-      if (e.target.value === '') return '$';
-      else return e.target.value;
+      return (e.target.value === '') ? '$' : e.target.value;
     });
   }
 
@@ -29,7 +27,7 @@ const PriceFilter = ({ isShown }) => {
   }
 
   return (
-    <div className={`price-filter ${isShown ? 'show' : 'hide'}`}>
+    <div className={`price-filter ${isShown ? 'show' : 'hide'}`} ref={filterRef}>
       <div className="price-container">
         <div className="from-container">
           <span>From</span>

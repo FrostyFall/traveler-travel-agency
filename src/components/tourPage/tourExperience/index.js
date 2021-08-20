@@ -1,4 +1,4 @@
-const TourExperience = ({ experience }) => {
+function TourExperience({ experience }) {
   return (
     <section className="tour-experience">
       <div className="main-container">
@@ -7,7 +7,7 @@ const TourExperience = ({ experience }) => {
           <p>{experience.text}</p>
         </div>
         <div className="image-container">
-          {experience.imgURL ? <img src={experience.imgURL} alt="Experience" /> : <div className="loader"></div>}
+          {experience.imgURL ? <img src={experience.imgURL} alt="Experience" /> : <div className="experience-loader"></div>}
         </div>
       </div>
     </section>
