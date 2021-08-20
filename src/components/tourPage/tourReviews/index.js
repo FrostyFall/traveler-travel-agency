@@ -4,7 +4,7 @@ function TourReviews({ reviews }) {
   return (
     <section className="tour-reviews">
       <div className="main-container">
-        <h3 className="main-heading">What Our Clients Say About It</h3>
+        <h3 className="main-heading">What Visitors Say About It</h3>
         <div className="tour-reviews-container">
           {reviews.map((singleReview, index) => {
             return <TourReview {...singleReview} key={index} />

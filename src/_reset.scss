@@ -43,7 +43,7 @@ a {
   font-size: 1.55rem;
   font-weight: bold;
   letter-spacing: 2px;
-  margin-bottom: 3rem;
+  margin-bottom: 3.25rem;
 }
 
 .show {
@@ -100,5 +100,14 @@ a {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
   }
 }

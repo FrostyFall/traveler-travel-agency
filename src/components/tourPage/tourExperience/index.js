@@ -2,7 +2,7 @@ function TourExperience({ experience }) {
   return (
     <section className="tour-experience">
       <div className="main-container">
-        <div className="experience-deatils">
+        <div className="experience-details">
           <h3 className="main-heading">What You Will Experience</h3>
           <p>{experience.text}</p>
         </div>

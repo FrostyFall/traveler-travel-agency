@@ -31,52 +31,54 @@ div.footer-container .links {
       margin-top: 1rem;
     }
   }
-  .social {
-    width: 50%;
-    h3 {
-      text-align: start;
+}
+
+div.footer-container .links .social {
+  width: 50%;
+  h3 {
+    text-align: start;
+  }
+  ul {
+    @include mixins.flex(flex-start, center);
+    li {
+      width: 6%;
     }
-    ul {
-      @include mixins.flex(flex-start, center);
-      li {
-        width: 6%;
-      }
-      li a {
-        color: transparent;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-      }
-      li svg {
-        width: 100%;
-        height: 100%;
-        color: #cdcdcd;
-        transition: color 0.3s ease;
-      }
-      li.facebook-icon:hover svg {
-        color: #4267b2;
-      }
-      li.twitter-icon:hover svg {
-        color: #1da1f2;
-      }
-      li:last-child {
-        margin-top: 0;
-      }
-      li:not(:last-child) {
-        margin-right: 1.5rem;
-      }
+    li a {
+      color: transparent;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+    li svg {
+      width: 100%;
+      height: 100%;
+      color: #cdcdcd;
+      transition: color 0.3s ease;
+    }
+    li.facebook-icon:hover svg {
+      color: #4267b2;
+    }
+    li.twitter-icon:hover svg {
+      color: #1da1f2;
+    }
+    li:last-child {
+      margin-top: 0;
+    }
+    li:not(:last-child) {
+      margin-right: 1.5rem;
     }
   }
-  .contacts,
-  .company {
-    width: 25%;
-    ul li a {
-      color: #cdcdcd;
-      transition: 0.2s color;
-    }
-    ul li a:hover {
-      color: vars.$primary-color;
-    }
+}
+
+div.footer-container .links .contacts,
+div.footer-container .links .company {
+  width: 25%;
+  ul li a {
+    color: #cdcdcd;
+    transition: 0.2s color;
+  }
+  ul li a:hover {
+    color: vars.$primary-color;
   }
 }
 
