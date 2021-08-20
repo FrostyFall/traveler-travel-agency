@@ -2,7 +2,7 @@
 @use '../../../vars';
 
 section.most-popular-tours {
-  padding: 6rem 0;
+  padding: 6rem 0 0;
 }
 
 section.most-popular-tours .info-container {
@@ -20,7 +20,7 @@ section.most-popular-tours .info-container {
       #000,
       #fff,
       1.05rem,
-      0.5em 1.25em,
+      0.4em 1.25em,
       7.5px,
       2px solid vars.$primary-color
     );

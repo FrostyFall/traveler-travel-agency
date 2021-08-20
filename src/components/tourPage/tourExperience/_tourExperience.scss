@@ -5,7 +5,8 @@ section.tour-experience .main-container {
   @include mixins.flex(center, center);
 }
 
-section.tour-experience .experience-deatils {
+section.tour-experience .experience-details {
+  max-height: 475px;
   width: 50%;
   padding: 0 4.5rem;
   h3 {
@@ -16,15 +17,17 @@ section.tour-experience .experience-deatils {
     }
   }
   p {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 400;
     letter-spacing: 1px;
+    line-height: 1.5;
   }
 }
 
 section.tour-experience .image-container {
   width: 50%;
   img {
+    max-height: 475px;
     width: 100%;
   }
   .experience-loader {
