@@ -181,6 +181,8 @@ section.tour-booking .booking-container > button {
       border-radius: 5px;
       outline: none;
       transition: border-color 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
       &:focus {
         border-color: vars.$primary-color;
       }
