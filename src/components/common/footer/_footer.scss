@@ -114,6 +114,92 @@ div.footer-container .copyright {
     font-size: 1rem;
   }
 }
-// @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 768px) {}
-// @media screen and (max-width: 576px) {}
+
+@media screen and (max-width: 991px) {
+  div.footer-container .links {
+    @include mixins.flex(space-between, flex-start);
+    width: 80%;
+    font-size: 1.1rem;
+    padding: 2em 0;
+    h3 {
+      font-size: inherit;
+      font-weight: 400;
+      color: #fff;
+      text-align: end;
+    }
+    ul {
+      margin-top: 1.5rem;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #cdcdcd;
+      text-align: end;
+      li:not(:first-child) {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  div.footer-container .links .social {
+    width: 50%;
+    h3 {
+      text-align: start;
+    }
+    ul {
+      @include mixins.flex(flex-start, center);
+      li {
+        width: 7%;
+      }
+      li a {
+        color: transparent;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+      li svg {
+        width: 100%;
+        height: 100%;
+        color: #cdcdcd;
+        transition: color 0.3s ease;
+      }
+      li.facebook-icon:hover svg {
+        color: #4267b2;
+      }
+      li.twitter-icon:hover svg {
+        color: #1da1f2;
+      }
+      li:last-child {
+        margin-top: 0;
+      }
+      li:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  div.footer-container .links .contacts,
+  div.footer-container .links .company {
+    width: 25%;
+    ul li a {
+      color: #cdcdcd;
+      transition: 0.2s color;
+    }
+    ul li a:hover {
+      color: vars.$primary-color;
+    }
+  }
+
+  div.footer-container .copyright {
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 1em 0;
+    h2 {
+      font-size: inherit;
+      font-weight: 400;
+    }
+  }
+}
+// @media screen and (max-width: 767px) {}
+// @media screen and (max-width: 575px) {}

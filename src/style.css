@@ -323,6 +323,100 @@ div.footer-container .copyright h2 {
     font-size: 1rem;
   }
 }
+@media screen and (max-width: 991px) {
+  div.footer-container .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    font-size: 1.1rem;
+    padding: 2em 0;
+  }
+  div.footer-container .links h3 {
+    font-size: inherit;
+    font-weight: 400;
+    color: #fff;
+    text-align: end;
+  }
+  div.footer-container .links ul {
+    margin-top: 1.5rem;
+    list-style: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #cdcdcd;
+    text-align: end;
+  }
+  div.footer-container .links ul li:not(:first-child) {
+    margin-top: 1rem;
+  }
+
+  div.footer-container .links .social {
+    width: 50%;
+  }
+  div.footer-container .links .social h3 {
+    text-align: start;
+  }
+  div.footer-container .links .social ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  div.footer-container .links .social ul li {
+    width: 7%;
+  }
+  div.footer-container .links .social ul li a {
+    color: transparent;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+  div.footer-container .links .social ul li svg {
+    width: 100%;
+    height: 100%;
+    color: #cdcdcd;
+    transition: color 0.3s ease;
+  }
+  div.footer-container .links .social ul li.facebook-icon:hover svg {
+    color: #4267b2;
+  }
+  div.footer-container .links .social ul li.twitter-icon:hover svg {
+    color: #1da1f2;
+  }
+  div.footer-container .links .social ul li:last-child {
+    margin-top: 0;
+  }
+  div.footer-container .links .social ul li:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+
+  div.footer-container .links .contacts,
+div.footer-container .links .company {
+    width: 25%;
+  }
+  div.footer-container .links .contacts ul li a,
+div.footer-container .links .company ul li a {
+    color: #cdcdcd;
+    transition: 0.2s color;
+  }
+  div.footer-container .links .contacts ul li a:hover,
+div.footer-container .links .company ul li a:hover {
+    color: #1aa483;
+  }
+
+  div.footer-container .copyright {
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 1em 0;
+  }
+  div.footer-container .copyright h2 {
+    font-size: inherit;
+    font-weight: 400;
+  }
+}
 div.tour {
   position: relative;
   width: 31%;
@@ -825,7 +919,7 @@ section.showcase .find-tour-container .custom-select svg {
 }
 @media screen and (max-width: 991px) {
   section.showcase .main-container {
-    min-height: 500px;
+    min-height: 575px;
     padding-bottom: 1.5rem;
   }
 
