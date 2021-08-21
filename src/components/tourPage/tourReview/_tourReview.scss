@@ -17,7 +17,7 @@ div.tour-review {
   }
   .ratings {
     @include mixins.flex(space-between, center);
-    margin: 0.35rem 0 0.6em;
+    margin: 0.35rem 0 0.6rem;
     width: 35%;
     svg {
       color: vars.$star-color;
@@ -56,7 +56,7 @@ div.tour-review {
     }
     .ratings {
       @include mixins.flex(space-between, center);
-      margin: 0.4rem 0 0.65rem;
+      margin: 0.35rem 0 0.6rem;
       width: 35%;
       svg {
         color: vars.$star-color;

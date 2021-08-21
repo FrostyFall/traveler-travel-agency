@@ -53,9 +53,10 @@ section.tour-experience .image-container {
       &::after {
         @include mixins.underLine(vars.$primary-color, 0, -0.5em);
       }
+      margin-bottom: 2rem;
     }
     p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 400;
       letter-spacing: 1px;
       line-height: 1.4;

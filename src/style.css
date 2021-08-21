@@ -110,7 +110,7 @@ a {
 }
 @media screen and (max-width: 1200px) {
   .main-heading {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     letter-spacing: 2px;
     margin-bottom: 2.75rem;
   }
@@ -830,7 +830,7 @@ section.showcase .find-tour-container .custom-select svg {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    padding-bottom: 1rem;
+    padding-bottom: 1.25rem;
     z-index: 0;
   }
 
@@ -861,7 +861,7 @@ section.showcase .find-tour-container .custom-select svg {
     font-size: 1.05rem;
     padding: 0.5em 0.75em;
     border-radius: 7.5px;
-    width: 45%;
+    width: 47.5%;
     z-index: 2;
   }
   section.showcase .find-tour-container button {
@@ -998,6 +998,7 @@ section.about-us .about-us-content {
   section.about-us .about-us-content h3 {
     position: relative;
     display: inline-block;
+    margin-bottom: 2rem;
   }
   section.about-us .about-us-content h3::after {
     content: "";
@@ -2104,6 +2105,7 @@ section.tour-experience .image-container .experience-loader {
   section.tour-experience .experience-details h3 {
     position: relative;
     display: inline-block;
+    margin-bottom: 2rem;
   }
   section.tour-experience .experience-details h3::after {
     content: "";
@@ -2123,7 +2125,7 @@ section.tour-experience .image-container .experience-loader {
 }
 @media screen and (max-width: 1200px) {
   section.tour-experience .experience-details p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1.4;
@@ -2241,7 +2243,7 @@ div.tour-review .ratings {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0.35rem 0 0.6em;
+  margin: 0.35rem 0 0.6rem;
   width: 35%;
 }
 div.tour-review .ratings svg {
@@ -2286,7 +2288,7 @@ div.tour-review:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0.4rem 0 0.65rem;
+    margin: 0.35rem 0 0.6rem;
     width: 35%;
   }
   div.tour-review .ratings svg {
