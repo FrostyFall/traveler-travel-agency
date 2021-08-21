@@ -987,11 +987,11 @@ section.about-us .about-us-content p {
   }
 
   section.about-us .image-container {
-    width: 45%;
+    width: 50%;
   }
 
   section.about-us .about-us-content {
-    width: 55%;
+    width: 50%;
   }
 
   section.about-us .image-container {
@@ -1010,7 +1010,7 @@ section.about-us .about-us-content p {
   }
 
   section.about-us .about-us-content {
-    padding: 0 2.5rem;
+    padding: 0 2rem;
   }
   section.about-us .about-us-content h3 {
     position: relative;
@@ -1168,9 +1168,6 @@ section.most-popular-tours .tours {
   section.most-popular-tours .tours::-webkit-scrollbar {
     display: none;
   }
-  section.most-popular-tours .tours div.tour:not(:last-of-type) {
-    margin-right: 1.5rem;
-  }
   section.most-popular-tours .tours div.tour {
     display: inline-block;
     position: relative;
@@ -1182,6 +1179,71 @@ section.most-popular-tours .tours {
   }
   section.most-popular-tours .tours div.tour:hover {
     transform: none;
+  }
+  section.most-popular-tours .tours div.tour:not(:last-of-type) {
+    margin-right: 1.5rem;
+  }
+  section.most-popular-tours .tours div.tour .tour-info .general-info {
+    width: 65%;
+  }
+  section.most-popular-tours .tours div.tour .tour-info .general-info h4 {
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+  section.most-popular-tours .tours div.tour .tour-info .general-info .ratings-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  section.most-popular-tours .tours div.tour .tour-info .general-info .ratings-container .ratings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+  }
+  section.most-popular-tours .tours div.tour .tour-info .general-info .ratings-container .ratings svg {
+    color: #f6c000;
+    width: 17%;
+    height: 100%;
+  }
+  section.most-popular-tours .tours div.tour .tour-info .general-info .ratings-container .score {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    font-size: 1.05rem;
+    color: #fff;
+  }
+  section.most-popular-tours .tours div.tour .tour-info .cost-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  section.most-popular-tours .tours div.tour .tour-info .cost-info h4 {
+    color: #e5e5e5;
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+  }
+  section.most-popular-tours .tours div.tour .tour-info .cost-info span.cost {
+    background-color: rgba(26, 164, 131, 0.75);
+    color: #fff;
+    font-size: 1.05rem;
+    padding: 0.15em 0.7em;
+    border-radius: 5px;
+    text-align: center;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  section.most-popular-tours .tours div.tour .tour-info .cost-info span.cost::-webkit-scrollbar {
+    display: none;
   }
 }
 section.agency-reviews {
