@@ -99,98 +99,30 @@ div.tour .tour-info .cost-info {
 
 @media screen and (max-width: 1200px) {
   div.tour {
-    position: relative;
     width: 31.25%;
     height: 425px;
-    cursor: pointer;
-    transition: transform 0.3s;
-    border-radius: 5px;
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
-
-  div.tour .tour-image {
-    position: relative;
-    height: inherit;
-    border-radius: inherit;
-    img {
-      border-radius: inherit;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.05);
-      border-radius: inherit;
-    }
   }
 
   div.tour .tour-info {
-    @include mixins.flex(space-between, center);
     padding: 0.7rem 1.25rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.45);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
   }
 
-  div.tour .tour-info .general-info {
-    width: 65%;
-    h4 {
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 400;
-      margin-bottom: 0.25rem;
-    }
+  div.tour .tour-info .general-info h4 {
+    font-size: 1.1rem;
   }
 
-  div.tour .tour-info .general-info .ratings-container {
-    @include mixins.flex(flex-start, center);
-    .ratings {
-      @include mixins.flex(space-between, center);
-      width: 60%;
-      svg {
-        color: vars.$star-color;
-        width: 17%;
-        height: 100%;
-      }
-    }
-    .score {
-      @include mixins.flex(center, center);
-      width: 25%;
-      font-size: 1.1rem;
-      color: #fff;
-    }
+  div.tour .tour-info .general-info .ratings-container .score {
+    font-size: 1.1rem;
   }
 
   div.tour .tour-info .cost-info {
-    @include mixins.flex(space-between, center);
     h4 {
-      color: vars.$secondary-text-color;
-      font-weight: 400;
       font-size: 0.9rem;
       margin-right: 0.5rem;
     }
     span.cost {
-      background-color: vars.$cost-color;
-      color: #fff;
       font-size: 1.05rem;
       padding: 0.15em 0.5em;
-      border-radius: 5px;
-      text-align: center;
-      overflow: auto;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-      &::-webkit-scrollbar {
-        display: none;
-      }
     }
   }
 }

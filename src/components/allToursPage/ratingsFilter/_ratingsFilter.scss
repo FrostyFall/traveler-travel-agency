@@ -94,34 +94,7 @@
 
 @media screen and (max-width: 1200px) {
   .filters-container .ratings-filter {
-    position: absolute;
-    top: 2.75em;
-    right: 0;
     font-size: 0.9rem;
-    padding: 0.75em 1em;
-    background-color: #fff;
-    border: 2px solid vars.$primary-color;
-    border-radius: 7.5px;
-  }
-
-  .filters-container .ratings-filter .ratings-row {
-    display: block;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    cursor: pointer;
-  }
-
-  .filters-container .ratings-filter .ratings-row:not(:last-of-type) {
-    margin-bottom: 10px;
-  }
-
-  .filters-container .ratings-filter .ratings-row > input[type="checkbox"] {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    cursor: pointer;
   }
 
   .filters-container
@@ -129,59 +102,22 @@
     .ratings-row
     > input[type="checkbox"]
     + *::before {
-    content: "";
-    display: inline-block;
     width: 1rem;
     height: 1rem;
-    border: #ededed solid 0.1rem;
-    border-radius: 3px;
-    background-color: #ededed;
-    margin-right: 11px;
   }
 
-  .filters-container
-    .ratings-filter
-    .ratings-row
-    > input[type="checkbox"]:checked
-    + *::before {
-    content: "";
-    text-align: center;
-    background: vars.$primary-color;
-    border-color: vars.$primary-color;
-  }
   .filters-container
     .ratings-filter
     .ratings-row
     > input[type="checkbox"]
     + span {
-    display: flex;
-    align-items: center;
     svg {
-      color: vars.$star-color;
       width: 1.15rem;
-      height: 100%;
-      &:not(:last-of-type) {
-        margin-right: 5px;
-      }
     }
   }
 
   .filters-container .ratings-filter > button {
-    @include mixins.button(
-      #fff,
-      vars.$primary-color,
-      0.8rem,
-      0.3em 1em,
-      5px,
-      2px solid vars.$primary-color,
-      100%
-    );
-    margin-top: 0.75rem;
-    transition: 0.3s background-color, 0.2s border-color;
-    &:hover {
-      background-color: vars.$secondary-color;
-      border-color: vars.$secondary-color;
-    }
+    font-size: 0.8rem;
   }
 }
 // @media screen and (max-width: 992px) {}

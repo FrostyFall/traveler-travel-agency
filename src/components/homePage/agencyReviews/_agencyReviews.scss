@@ -28,22 +28,8 @@ section.agency-reviews .reviews-container {
     padding: 5rem 0 0;
   }
 
-  section.agency-reviews .main-container {
-    @include mixins.flex(center, center, column);
-  }
-
-  section.agency-reviews h3 {
-    position: relative;
-    &::after {
-      @include mixins.underLine(vars.$primary-color, -0.5em, -0.5em);
-    }
-  }
-
   section.agency-reviews .reviews-container {
-    @include mixins.flex(space-between, center);
-    width: 95%;
     min-height: 155px;
-    height: 1px;
   }
 }
 

@@ -53,19 +53,9 @@ header nav {
     font-size: 1.3rem;
   }
 
-  header nav {
-    min-width: 40%;
-    ul {
-      li {
-        font-size: 0.975rem;
-        padding: 1em 0;
-      }
-      li a {
-        color: #000;
-        transition: 0.2s color;
-        position: relative;
-      }
-    }
+  header nav ul li {
+    font-size: 0.975rem;
+    padding: 1em 0;
   }
 }
 // @media screen and (max-width: 992px) {}

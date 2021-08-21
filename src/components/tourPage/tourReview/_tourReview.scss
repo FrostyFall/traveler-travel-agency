@@ -41,40 +41,9 @@ div.tour-review {
 
 @media screen and (max-width: 1200px) {
   div.tour-review {
-    @include mixins.flex(flex-start, center, column);
-    width: 31%;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 10px;
     font-size: 1rem;
-    padding: 0.75em 1em;
-    transition: transform 0.3s;
-    box-shadow: 0px 5px 20px 0px rgba(100, 100, 111, 0.2);
-    h4 {
-      font-size: inherit;
-      font-weight: 400;
-    }
-    .ratings {
-      @include mixins.flex(space-between, center);
-      margin: 0.35rem 0 0.6rem;
-      width: 35%;
-      svg {
-        color: vars.$star-color;
-        width: 17%;
-        height: 100%;
-      }
-      svg:not(:last-child) {
-        margin-right: 0.25rem;
-      }
-    }
     p {
-      text-align: center;
       font-size: 0.95rem;
-      color: #626262;
-      width: 100%;
-    }
-    &:hover {
-      transform: scale(1.025);
     }
   }
 }
