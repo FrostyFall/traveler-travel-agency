@@ -117,7 +117,7 @@ a {
 }
 @media screen and (max-width: 991px) {
   .main-heading {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 2px;
     margin-bottom: 2.75rem;
   }
@@ -465,8 +465,8 @@ div.tour .tour-info .cost-info span.cost::-webkit-scrollbar {
   div.tour {
     display: inline-block;
     position: relative;
-    width: 47.5%;
-    height: 400px;
+    width: 42.5%;
+    height: 350px;
     cursor: pointer;
     transition: transform 0.3s;
     border-radius: 5px;
@@ -1107,7 +1107,7 @@ section.most-popular-tours .tours {
 }
 @media screen and (max-width: 991px) {
   section.most-popular-tours {
-    padding: 4rem 0 0;
+    padding: 5rem 0 0;
   }
 
   section.most-popular-tours .info-container {
@@ -1221,6 +1221,48 @@ section.agency-reviews .reviews-container {
     min-height: 155px;
   }
 }
+@media screen and (max-width: 991px) {
+  section.agency-reviews {
+    padding: 6rem 0 0;
+  }
+
+  section.agency-reviews .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section.agency-reviews h3 {
+    position: relative;
+  }
+  section.agency-reviews h3::after {
+    content: "";
+    position: absolute;
+    bottom: -0.4em;
+    left: -0.5em;
+    right: -0.5em;
+    background-color: #1aa483;
+    height: 0.15em;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: 991px) and (max-width: 1200px) {
+  section.agency-reviews h3::after {
+    height: 0.125em;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.agency-reviews .reviews-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    min-height: 140px;
+    height: 1px;
+  }
+}
 div.agency-review {
   display: flex;
   flex-direction: column;
@@ -1266,6 +1308,43 @@ div.agency-review:hover {
     font-size: 0.95rem;
   }
 }
+@media screen and (max-width: 991px) {
+  div.agency-review {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 31.25%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    padding: 0.6em 0.8em;
+    transition: transform 0.3s;
+    box-shadow: 0px 5px 20px 0px rgba(100, 100, 111, 0.2);
+  }
+  div.agency-review p {
+    font-style: italic;
+    font-weight: 300;
+    font-size: inherit;
+    width: 100%;
+  }
+  div.agency-review h5 {
+    align-self: flex-end;
+    font-weight: 400;
+    font-size: 0.75rem;
+    text-align: end;
+    color: #797979;
+    transition: color 0.2s;
+  }
+  div.agency-review h5 span {
+    color: rgba(26, 164, 131, 0.8);
+    transition: inherit;
+  }
+  div.agency-review:hover {
+    transform: scale(1.025);
+  }
+}
 div.images {
   padding: 6rem 0 4rem;
   background-color: #fff;
@@ -1293,6 +1372,27 @@ div.images-container .img {
 
   div.images-container {
     min-height: 240px;
+  }
+}
+@media screen and (max-width: 991px) {
+  div.images {
+    padding: 5rem 0 3rem;
+    background-color: #fff;
+  }
+
+  div.images-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 180px;
+    height: 1px;
+  }
+
+  div.images-container .img {
+    width: 32%;
+    height: 100%;
   }
 }
 section.all-tours-showcase .main-container {

@@ -27,6 +27,23 @@ div.images-container .img {
   }
 }
 
-// @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 768px) {}
-// @media screen and (max-width: 576px) {}
+@media screen and (max-width: 991px) {
+  div.images {
+    padding: 5rem 0 3rem;
+    background-color: #fff;
+  }
+
+  div.images-container {
+    @include mixins.flex(space-between, center);
+    width: 100%;
+    min-height: 180px;
+    height: 1px;
+  }
+
+  div.images-container .img {
+    width: 32%;
+    height: 100%;
+  }
+}
+// @media screen and (max-width: 767px) {}
+// @media screen and (max-width: 575px) {}
