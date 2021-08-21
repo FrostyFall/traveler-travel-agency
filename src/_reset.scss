@@ -119,11 +119,12 @@ a {
     margin-bottom: 2.75rem;
   }
 }
-// @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 768px) {}
-// @media screen and (max-width: 576px) {}
-
-// @media screen and (max-width: 1200px) {}
-// @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 768px) {}
-// @media screen and (max-width: 576px) {}
+@media screen and (max-width: 991px) {
+  .main-heading {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 2.75rem;
+  }
+}
+// @media screen and (max-width: 767px) {}
+// @media screen and (max-width: 575px) {}

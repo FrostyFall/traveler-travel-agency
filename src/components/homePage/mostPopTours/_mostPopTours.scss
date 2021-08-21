@@ -48,6 +48,57 @@ section.most-popular-tours .tours {
   }
 }
 
-// @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 768px) {}
-// @media screen and (max-width: 576px) {}
+@media screen and (max-width: 991px) {
+  section.most-popular-tours {
+    padding: 4rem 0 0;
+  }
+
+  section.most-popular-tours .info-container {
+    @include mixins.flex(space-between, flex-start);
+    width: 92.5%;
+    margin: 0 auto;
+    h3 {
+      position: relative;
+      &::after {
+        @include mixins.underLine(vars.$primary-color, 0, -0.5em);
+      }
+    }
+    a {
+      @include mixins.button(
+        #000,
+        #fff,
+        0.85rem,
+        0.4em 1.25em,
+        7.5px,
+        2px solid vars.$primary-color
+      );
+      transition: background-color 0.2s, color 0.2s;
+      &:hover {
+        background-color: vars.$primary-color;
+        color: #fff;
+      }
+    }
+  }
+
+  section.most-popular-tours .tours {
+    // @include mixins.flex(flex-start, center);
+    // @include mixins.flex(space-between, center);
+    // column-gap: 2rem;
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 92.5%;
+    margin: 0 auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .tour:not(:last-of-type) {
+      margin-right: 1.5rem;
+    }
+  }
+}
+// @media screen and (max-width: 767px) {}
+// @media screen and (max-width: 575px) {}
