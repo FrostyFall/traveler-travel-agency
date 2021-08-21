@@ -33,3 +33,42 @@ div.agency-review {
     transform: scale(1.025);
   }
 }
+
+@media screen and (max-width: 1200px) {
+  div.agency-review {
+    @include mixins.flex(space-between, center, column);
+    width: 31.25%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 0.6em 0.8em;
+    transition: transform 0.3s;
+    box-shadow: 0px 5px 20px 0px rgba(100, 100, 111, 0.2);
+    p {
+      font-style: italic;
+      font-weight: 300;
+      font-size: inherit;
+      width: 100%;
+    }
+    h5 {
+      align-self: flex-end;
+      font-weight: 400;
+      font-size: 0.95rem;
+      text-align: end;
+      color: #797979;
+      transition: color 0.2s;
+      span {
+        color: vars.$review-country-from-color;
+        transition: inherit;
+      }
+    }
+    &:hover {
+      transform: scale(1.025);
+    }
+  }
+}
+
+// @media screen and (max-width: 992px) {}
+// @media screen and (max-width: 768px) {}
+// @media screen and (max-width: 576px) {}

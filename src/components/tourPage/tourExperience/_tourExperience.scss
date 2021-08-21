@@ -36,3 +36,45 @@ section.tour-experience .image-container {
     animation: pulse 1.5s forwards infinite;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  section.tour-experience .main-container {
+    @include mixins.flex(center, center);
+  }
+
+  section.tour-experience .experience-details {
+    max-height: 475px;
+    width: 50%;
+    // padding: 0 4.5rem;
+    padding: 0 3.75rem;
+    h3 {
+      position: relative;
+      display: inline-block;
+      &::after {
+        @include mixins.underLine(vars.$primary-color, 0, -0.5em);
+      }
+    }
+    p {
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      line-height: 1.4;
+    }
+  }
+
+  section.tour-experience .image-container {
+    width: 50%;
+    img {
+      max-height: 475px;
+      width: 100%;
+    }
+    .experience-loader {
+      width: 100%;
+      height: 450px;
+      animation: pulse 1.5s forwards infinite;
+    }
+  }
+}
+// @media screen and (max-width: 992px) {}
+// @media screen and (max-width: 768px) {}
+// @media screen and (max-width: 576px) {}

@@ -17,3 +17,25 @@ section.tour-reviews {
     width: 90%;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  section.tour-reviews {
+    padding: 5rem 0;
+    h3 {
+      position: relative;
+      &::after {
+        @include mixins.underLine(vars.$primary-color, -0.5em, -0.5em);
+      }
+    }
+    .main-container {
+      @include mixins.flex(center, center, column);
+    }
+    .tour-reviews-container {
+      @include mixins.flex(space-between, flex-start);
+      width: 90%;
+    }
+  }
+}
+// @media screen and (max-width: 992px) {}
+// @media screen and (max-width: 768px) {}
+// @media screen and (max-width: 576px) {}

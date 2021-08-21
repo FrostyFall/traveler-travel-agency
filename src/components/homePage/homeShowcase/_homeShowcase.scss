@@ -102,3 +102,101 @@ section.showcase .find-tour-container .custom-select {
     width: 5%;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  section.showcase .main-container {
+    @include mixins.flex(center, flex-end);
+    width: 100%;
+    min-height: 575px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-bottom: 1rem;
+    z-index: 0;
+  }
+
+  section.showcase .encouraging-msg {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    transform: translate(-30%, -25%);
+    background-color: rgba(0, 0, 0, 0.45);
+    // padding: 1.25rem 1.75rem;
+    padding: 0.8rem 1.75rem;
+    border-radius: 5px;
+    z-index: 2;
+    h2 {
+      font-size: 1.3rem;
+      // margin-right: 3.5rem;
+      margin-right: 1.75rem;
+      line-height: 1.6;
+      letter-spacing: 0.085em;
+      color: #fff;
+    }
+  }
+
+  section.showcase .find-tour-container {
+    @include mixins.flex(center, center);
+    background-color: rgba(0, 0, 0, 0.35);
+    font-size: 1.05rem;
+    padding: 0.5em 0.75em;
+    border-radius: 7.5px;
+    width: 45%;
+    z-index: 2;
+    button {
+      background-color: vars.$find-tour-btn-color;
+      font-size: inherit;
+      border-radius: 5px;
+      border: none;
+      color: #fff;
+      padding: 0;
+      height: 2.3em;
+      width: 50%;
+      font-family: inherit;
+      margin-left: 0.75em;
+      cursor: pointer;
+      transition: 0.2s background-color;
+      &:hover {
+        background-color: vars.$find-tour-btn-hover-color;
+      }
+    }
+  }
+
+  section.showcase .find-tour-container .custom-select {
+    position: relative;
+    width: 50%;
+    select {
+      width: 100%;
+      padding: 0 1.1em;
+      height: 2.3em;
+      font-size: inherit;
+      border: none;
+      border-radius: 5px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: none;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      cursor: pointer;
+      &::-ms-expand {
+        display: none;
+      }
+    }
+    svg {
+      position: absolute;
+      content: "";
+      font-size: inherit;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      color: #fff;
+      width: 5%;
+    }
+  }
+}
+
+// @media screen and (max-width: 992px) {}
+// @media screen and (max-width: 768px) {}
+// @media screen and (max-width: 576px) {}
