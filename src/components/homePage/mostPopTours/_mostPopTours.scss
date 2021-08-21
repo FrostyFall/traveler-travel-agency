@@ -50,7 +50,7 @@ section.most-popular-tours .tours {
 
 @media screen and (max-width: 991px) {
   section.most-popular-tours {
-    padding: 5rem 0 0;
+    padding: 4rem 0 0;
   }
 
   section.most-popular-tours .info-container {
@@ -95,8 +95,25 @@ section.most-popular-tours .tours {
     &::-webkit-scrollbar {
       display: none;
     }
-    .tour:not(:last-of-type) {
+    div.tour:not(:last-of-type) {
       margin-right: 1.5rem;
+    }
+    div.tour {
+      display: inline-block;
+      position: relative;
+      width: 42.5%;
+      // width: 700px;
+      height: 375px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      border-radius: 5px;
+      &:hover {
+        // transform: scale(1.02);
+        transform: none;
+      }
+      // &:not(:last-of-type) {
+      //   margin-right: 1.25rem;
+      // }
     }
   }
 }

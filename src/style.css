@@ -465,8 +465,8 @@ div.tour .tour-info .cost-info span.cost::-webkit-scrollbar {
   div.tour {
     display: inline-block;
     position: relative;
-    width: 42.5%;
-    height: 350px;
+    width: 47.5%;
+    height: 400px;
     cursor: pointer;
     transition: transform 0.3s;
     border-radius: 5px;
@@ -1107,7 +1107,7 @@ section.most-popular-tours .tours {
 }
 @media screen and (max-width: 991px) {
   section.most-popular-tours {
-    padding: 5rem 0 0;
+    padding: 4rem 0 0;
   }
 
   section.most-popular-tours .info-container {
@@ -1168,8 +1168,20 @@ section.most-popular-tours .tours {
   section.most-popular-tours .tours::-webkit-scrollbar {
     display: none;
   }
-  section.most-popular-tours .tours .tour:not(:last-of-type) {
+  section.most-popular-tours .tours div.tour:not(:last-of-type) {
     margin-right: 1.5rem;
+  }
+  section.most-popular-tours .tours div.tour {
+    display: inline-block;
+    position: relative;
+    width: 42.5%;
+    height: 375px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border-radius: 5px;
+  }
+  section.most-popular-tours .tours div.tour:hover {
+    transform: none;
   }
 }
 section.agency-reviews {
@@ -1223,7 +1235,7 @@ section.agency-reviews .reviews-container {
 }
 @media screen and (max-width: 991px) {
   section.agency-reviews {
-    padding: 6rem 0 0;
+    padding: 4rem 0 0;
   }
 
   section.agency-reviews .main-container {
@@ -1376,7 +1388,7 @@ div.images-container .img {
 }
 @media screen and (max-width: 991px) {
   div.images {
-    padding: 5rem 0 3rem;
+    padding: 4rem 0 2rem;
     background-color: #fff;
   }
 
