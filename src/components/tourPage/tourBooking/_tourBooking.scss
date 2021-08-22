@@ -157,5 +157,32 @@ section.tour-booking .booking-container > button {
     margin-top: 2rem;
   }
 }
-// @media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+  section.tour-booking {
+    padding-bottom: 2rem;
+  }
+
+  section.tour-booking .booking-container .options,
+  section.tour-booking .booking-container form {
+    min-height: 145px;
+  }
+
+  section.tour-booking .booking-container .standard,
+  section.tour-booking .booking-container .premium {
+    @include mixins.flex(space-between, center);
+    font-size: 0.9rem;
+    h5 {
+      font-size: 0.7rem;
+    }
+  }
+
+  section.tour-booking .booking-container form input {
+    font-size: 0.7rem;
+  }
+
+  section.tour-booking .booking-container > button {
+    font-size: 0.7rem;
+    margin-top: 1.75rem;
+  }
+}
 // @media screen and (max-width: 575px) {}

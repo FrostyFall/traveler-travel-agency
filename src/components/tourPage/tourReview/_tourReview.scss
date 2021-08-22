@@ -69,5 +69,25 @@ div.tour-review {
     }
   }
 }
-// @media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+  div.tour-review {
+    font-size: 0.8rem;
+    p {
+      font-size: 0.7rem;
+    }
+    .ratings {
+      @include mixins.flex(space-between, center);
+      margin: 0.35rem 0 0.6rem;
+      width: 42.5%;
+      svg {
+        color: vars.$star-color;
+        width: 17%;
+        height: 100%;
+      }
+      svg:not(:last-child) {
+        margin-right: 0.25rem;
+      }
+    }
+  }
+}
 // @media screen and (max-width: 575px) {}
