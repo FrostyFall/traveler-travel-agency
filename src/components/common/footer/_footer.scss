@@ -293,7 +293,7 @@ div.footer-container .copyright {
     @include mixins.flex(center, center, column);
     width: 90%;
     font-size: 1.1rem;
-    padding: 1.5em 0;
+    padding: 2em 0;
     h3 {
       font-size: inherit;
       font-weight: 400;
@@ -301,7 +301,7 @@ div.footer-container .copyright {
       text-align: center;
     }
     ul {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
       list-style: none;
       font-size: 1rem;
       font-weight: 400;
@@ -321,7 +321,7 @@ div.footer-container .copyright {
     ul {
       @include mixins.flex(center, center);
       li {
-        width: 8%;
+        width: 9%;
       }
       li a {
         color: transparent;
