@@ -59,6 +59,23 @@ section.all-tours-content-container .all-tours-container > button {
     margin-top: 2rem;
   }
 }
-// @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 768px) {}
-// @media screen and (max-width: 576px) {}
+@media screen and (max-width: 991px) {
+  section.all-tours-content-container {
+    padding: 2.5rem 0;
+  }
+
+  section.all-tours-content-container .all-tours {
+    row-gap: 2.5rem;
+  }
+
+  section.all-tours-content-container .all-tours.few {
+    column-gap: 2.1rem;
+  }
+
+  section.all-tours-content-container .all-tours-container > button {
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+}
+// @media screen and (max-width: 767px) {}
+// @media screen and (max-width: 575px) {}
