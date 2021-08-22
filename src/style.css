@@ -1274,6 +1274,52 @@ div.notification-container .close-icon-container .slash.reverse {
     font-size: 0.55rem;
   }
 }
+@media screen and (max-width: 575px) {
+  div.notification-container {
+    bottom: 5%;
+    right: 2%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
+
+  div.notification-container .status-msg-container p {
+    font-size: 0.9rem;
+  }
+
+  div.notification-container .close-icon-container {
+    min-width: 12px;
+    min-height: 12px;
+    position: relative;
+    cursor: pointer;
+  }
+  div.notification-container .close-icon-container .slash {
+    position: absolute;
+    width: 16.5px;
+    height: 1.5px;
+    background-color: #d4d4d4;
+  }
+  div.notification-container .close-icon-container .slash.forward {
+    top: 0;
+    left: 1px;
+    transform-origin: top left;
+    transform: rotate(45deg);
+  }
+  div.notification-container .close-icon-container .slash.reverse {
+    bottom: -0.75px;
+    transform-origin: top left;
+    transform: rotate(-45deg);
+  }
+
+  div.notification-container .status-icon-container {
+    background-color: #d4d4d4;
+    min-height: 25px;
+    min-width: 25px;
+    border-radius: 50%;
+    margin-right: 1.15rem;
+    position: relative;
+    font-size: 0.65rem;
+  }
+}
 section.showcase .main-container {
   display: flex;
   flex-direction: row;
@@ -1881,7 +1927,7 @@ section.about-us .about-us-content {
     padding: 1.5rem 0;
   }
   section.about-us .about-us-content p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1.4;
@@ -3160,13 +3206,6 @@ section.all-tours-content-container .all-tours-container > button:hover {
 @media screen and (max-width: 575px) {
   section.all-tours-content-container .all-tours-container > button {
     font-size: 0.9rem;
-    padding: 1em;
-    width: 100%;
-    color: #fff;
-    background-color: #1aa483;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     margin-top: 1.75rem;
     transition: background-color 0.2s;
   }
@@ -3963,16 +4002,17 @@ section.tour-showcase .tour-info-container h3 {
     text-align: center;
   }
   section.tour-showcase .tour-info-container h2 {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     margin-right: 0;
     line-height: 1.6;
     letter-spacing: 0.085em;
     color: #fff;
+    white-space: nowrap;
   }
   section.tour-showcase .tour-info-container h3 {
     color: #eeeeee;
     font-weight: 400;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     white-space: nowrap;
   }
 }
@@ -4095,7 +4135,7 @@ section.tour-experience .image-container .experience-loader {
 }
 @media screen and (max-width: 575px) {
   section.tour-experience .experience-details p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1.4;

@@ -107,7 +107,6 @@ section.all-tours-content-container .all-tours-container > button {
 
   section.all-tours-content-container .all-tours-info {
     @include mixins.flex(center, flex-start, column);
-    // @include mixins.flex(space-between, flex-start);
     h3 {
       position: relative;
       &::after {
@@ -130,15 +129,7 @@ section.all-tours-content-container .all-tours-container > button {
   }
 
   section.all-tours-content-container .all-tours-container > button {
-    @include mixins.button(
-      #fff,
-      vars.$primary-color,
-      0.9rem,
-      1em,
-      5px,
-      none,
-      100%
-    );
+    font-size: 0.9rem;
     margin-top: 1.75rem;
     transition: background-color 0.2s;
     &:hover {

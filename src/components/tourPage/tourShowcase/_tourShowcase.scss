@@ -370,16 +370,17 @@ section.tour-showcase .tour-info-container {
     z-index: 2;
     text-align: center;
     h2 {
-      font-size: 0.9rem;
+      font-size: 1.05rem;
       margin-right: 0;
       line-height: 1.6;
       letter-spacing: 0.085em;
       color: #fff;
+      white-space: nowrap;
     }
     h3 {
       color: #eeeeee;
       font-weight: 400;
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       white-space: nowrap;
     }
   }
