@@ -181,7 +181,7 @@ div.tour .tour-info .cost-info {
     width: 65%;
     h4 {
       color: #fff;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: 400;
       margin-bottom: 0.25rem;
     }
@@ -201,7 +201,7 @@ div.tour .tour-info .cost-info {
     .score {
       @include mixins.flex(center, center);
       width: 25%;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       color: #fff;
     }
   }
@@ -211,13 +211,13 @@ div.tour .tour-info .cost-info {
     h4 {
       color: vars.$secondary-text-color;
       font-weight: 400;
-      font-size: 1rem;
+      font-size: 0.9rem;
       margin-right: 0.75rem;
     }
     span.cost {
       background-color: vars.$cost-color;
       color: #fff;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       padding: 0.15em 0.7em;
       border-radius: 5px;
       text-align: center;

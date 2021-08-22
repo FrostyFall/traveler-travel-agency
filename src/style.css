@@ -608,7 +608,7 @@ div.tour .tour-info .cost-info span.cost::-webkit-scrollbar {
   }
   div.tour .tour-info .general-info h4 {
     color: #fff;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 400;
     margin-bottom: 0.25rem;
   }
@@ -637,7 +637,7 @@ div.tour .tour-info .cost-info span.cost::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     width: 25%;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: #fff;
   }
 
@@ -650,13 +650,13 @@ div.tour .tour-info .cost-info span.cost::-webkit-scrollbar {
   div.tour .tour-info .cost-info h4 {
     color: #e5e5e5;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-right: 0.75rem;
   }
   div.tour .tour-info .cost-info span.cost {
     background-color: rgba(26, 164, 131, 0.75);
     color: #fff;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     padding: 0.15em 0.7em;
     border-radius: 5px;
     text-align: center;
@@ -779,6 +779,40 @@ div.notification-container .close-icon-container .slash.reverse {
 
   div.notification-container .status-msg-container p {
     font-size: 0.875rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  div.notification-container {
+    max-width: 300px;
+    font-size: 0.9rem;
+  }
+
+  div.notification-container .status-msg-container p {
+    font-size: 0.8rem;
+  }
+
+  div.notification-container .close-icon-container {
+    min-width: 12.5px;
+    min-height: 12.5px;
+    position: relative;
+    cursor: pointer;
+  }
+  div.notification-container .close-icon-container .slash {
+    position: absolute;
+    width: 17.5px;
+    height: 1.5px;
+    background-color: #d4d4d4;
+  }
+  div.notification-container .close-icon-container .slash.forward {
+    top: 0;
+    left: 1px;
+    transform-origin: top left;
+    transform: rotate(45deg);
+  }
+  div.notification-container .close-icon-container .slash.reverse {
+    bottom: -0.75px;
+    transform-origin: top left;
+    transform: rotate(-45deg);
   }
 }
 section.showcase .main-container {
@@ -1275,7 +1309,7 @@ section.most-popular-tours .tours {
     transform: none;
   }
   section.most-popular-tours .tours div.tour:not(:last-of-type) {
-    margin-right: 1.5rem;
+    margin-right: 1.25rem;
   }
   section.most-popular-tours .tours div.tour .tour-info .general-info {
     width: 65%;
@@ -1606,6 +1640,39 @@ section.all-tours-showcase h2 {
 
   section.all-tours-showcase h2 {
     font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.all-tours-showcase .image-container {
+    position: relative;
+  }
+  section.all-tours-showcase .image-container img {
+    max-height: 225px;
+    z-index: 0;
+  }
+  section.all-tours-showcase .image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(rgba(17, 72, 0, 0.1), rgba(0, 0, 0, 0.1));
+  }
+
+  section.all-tours-showcase h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5em 1.75em;
+    background-color: rgba(0, 0, 0, 0.45);
+    letter-spacing: 1px;
+    border-radius: 5px;
+    z-index: 2;
   }
 }
 section.all-tours-content-container {
@@ -2130,6 +2197,85 @@ section.tour-showcase .tour-info-container h3 {
     font-size: 1rem;
   }
 }
+@media screen and (max-width: 991px) {
+  section.tour-showcase .images-container {
+    z-index: 0;
+    min-height: 575px;
+    height: 1px;
+  }
+  section.tour-showcase .images-container .slide {
+    height: 100%;
+    width: 100%;
+    display: none;
+    animation: fade 0.5s forwards;
+  }
+  section.tour-showcase .images-container .loader {
+    height: 100%;
+    width: 100%;
+    animation: pulse 1.5s forwards infinite;
+  }
+
+  section.tour-showcase .slider {
+    position: absolute;
+    top: 0;
+    width: 20%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.2s opacity ease-in-out;
+    cursor: pointer;
+    z-index: 2;
+    animation: initialShow 3s;
+  }
+  section.tour-showcase .slider:hover {
+    opacity: 1;
+  }
+  section.tour-showcase .slider svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.9rem;
+    max-width: 1.25rem;
+    color: #fff;
+  }
+  section.tour-showcase .slider.previous-slider {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+    left: 0;
+  }
+  section.tour-showcase .slider.previous-slider svg {
+    left: 15%;
+  }
+  section.tour-showcase .slider.next-slider {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+    right: 0;
+  }
+  section.tour-showcase .slider.next-slider svg {
+    right: 15%;
+  }
+
+  section.tour-showcase .tour-info-container {
+    position: absolute;
+    top: 7.5%;
+    left: 20%;
+    transform: translate(-20%, -15%);
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 0.75rem 1.5rem;
+    min-width: 24%;
+    border-radius: 5px;
+    z-index: 2;
+  }
+  section.tour-showcase .tour-info-container h2 {
+    font-size: 1.2rem;
+    margin-right: 1.75rem;
+    line-height: 1.6;
+    letter-spacing: 0.085em;
+    color: #fff;
+  }
+  section.tour-showcase .tour-info-container h3 {
+    color: #eeeeee;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+}
 section.tour-experience .main-container {
   display: flex;
   flex-direction: row;
@@ -2193,6 +2339,20 @@ section.tour-experience .image-container .experience-loader {
     line-height: 1.4;
   }
 }
+@media screen and (max-width: 991px) {
+  section.tour-experience .experience-details {
+    padding: 0 2rem;
+  }
+  section.tour-experience .experience-details h3 {
+    margin-bottom: 1.5rem;
+  }
+  section.tour-experience .experience-details p {
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.4;
+  }
+}
 section.tour-reviews {
   padding: 6rem 0;
 }
@@ -2231,6 +2391,11 @@ section.tour-reviews .tour-reviews-container {
 @media screen and (max-width: 1200px) {
   section.tour-reviews {
     padding: 5rem 0;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.tour-reviews {
+    padding: 4rem 0;
   }
 }
 div.tour-review {
@@ -2283,6 +2448,30 @@ div.tour-review:hover {
   }
   div.tour-review p {
     font-size: 0.95rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  div.tour-review {
+    font-size: 0.9rem;
+  }
+  div.tour-review p {
+    font-size: 0.8rem;
+  }
+  div.tour-review .ratings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.35rem 0 0.6rem;
+    width: 45%;
+  }
+  div.tour-review .ratings svg {
+    color: #f6c000;
+    width: 17%;
+    height: 100%;
+  }
+  div.tour-review .ratings svg:not(:last-child) {
+    margin-right: 0.25rem;
   }
 }
 section.tour-booking {
@@ -2453,6 +2642,38 @@ section.tour-booking .booking-container .premium h5 {
 
   section.tour-booking .booking-container > button {
     font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.tour-booking {
+    padding-bottom: 2rem;
+  }
+
+  section.tour-booking .booking-container .options,
+section.tour-booking .booking-container form {
+    min-height: 160px;
+  }
+
+  section.tour-booking .booking-container .standard,
+section.tour-booking .booking-container .premium {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+  }
+  section.tour-booking .booking-container .standard h5,
+section.tour-booking .booking-container .premium h5 {
+    font-size: 0.8rem;
+  }
+
+  section.tour-booking .booking-container form input {
+    font-size: 0.8rem;
+  }
+
+  section.tour-booking .booking-container > button {
+    font-size: 0.8rem;
     margin-top: 2rem;
   }
 }

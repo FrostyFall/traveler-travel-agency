@@ -108,6 +108,39 @@ div.notification-container .close-icon-container {
     font-size: 0.875rem;
   }
 }
-// @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 768px) {}
-// @media screen and (max-width: 576px) {}
+@media screen and (max-width: 991px) {
+  div.notification-container {
+    max-width: 300px;
+    font-size: 0.9rem;
+  }
+
+  div.notification-container .status-msg-container p {
+    font-size: 0.8rem;
+  }
+
+  div.notification-container .close-icon-container {
+    min-width: 12.5px;
+    min-height: 12.5px;
+    position: relative;
+    cursor: pointer;
+    .slash {
+      position: absolute;
+      width: 17.5px;
+      height: 1.5px;
+      background-color: #d4d4d4;
+    }
+    .slash.forward {
+      top: 0;
+      left: 1px;
+      transform-origin: top left;
+      transform: rotate(45deg);
+    }
+    .slash.reverse {
+      bottom: -0.75px;
+      transform-origin: top left;
+      transform: rotate(-45deg);
+    }
+  }
+}
+// @media screen and (max-width: 767px) {}
+// @media screen and (max-width: 575px) {}
