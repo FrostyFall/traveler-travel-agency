@@ -56,5 +56,27 @@ section.agency-reviews .reviews-container {
     height: 1px;
   }
 }
-// @media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+  section.agency-reviews {
+    padding: 3rem 0 0;
+  }
+
+  section.agency-reviews .main-container {
+    @include mixins.flex(center, center, column);
+  }
+
+  section.agency-reviews h3 {
+    position: relative;
+    &::after {
+      @include mixins.underLine(vars.$primary-color, -0.5em, -0.5em);
+    }
+  }
+
+  section.agency-reviews .reviews-container {
+    @include mixins.flex(space-between, center);
+    width: 95%;
+    min-height: 120px;
+    height: 1px;
+  }
+}
 // @media screen and (max-width: 575px) {}

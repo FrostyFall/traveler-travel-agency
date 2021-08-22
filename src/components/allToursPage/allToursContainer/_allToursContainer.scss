@@ -77,5 +77,22 @@ section.all-tours-content-container .all-tours-container > button {
     margin-top: 2rem;
   }
 }
-// @media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+  section.all-tours-content-container {
+    padding: 2rem 0;
+  }
+
+  section.all-tours-content-container .all-tours {
+    row-gap: 1.5rem;
+  }
+
+  section.all-tours-content-container .all-tours.few {
+    column-gap: 1.15rem;
+  }
+
+  section.all-tours-content-container .all-tours-container > button {
+    font-size: 0.7rem;
+    margin-top: 1.75rem;
+  }
+}
 // @media screen and (max-width: 575px) {}

@@ -121,5 +121,32 @@
   }
 }
 // @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  .filters-container .ratings-filter {
+    font-size: 0.8rem;
+  }
+
+  .filters-container
+    .ratings-filter
+    .ratings-row
+    > input[type="checkbox"]
+    + *::before {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  .filters-container
+    .ratings-filter
+    .ratings-row
+    > input[type="checkbox"]
+    + span {
+    svg {
+      width: 1.025rem;
+    }
+  }
+
+  .filters-container .ratings-filter > button {
+    font-size: 0.7rem;
+  }
+}
 // @media screen and (max-width: 576px) {}

@@ -45,5 +45,22 @@ div.images-container .img {
     height: 100%;
   }
 }
-// @media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+  div.images {
+    padding: 3rem 0 2rem;
+    background-color: #fff;
+  }
+
+  div.images-container {
+    @include mixins.flex(space-between, center);
+    width: 100%;
+    min-height: 150px;
+    height: 1px;
+  }
+
+  div.images-container .img {
+    width: 32%;
+    height: 100%;
+  }
+}
 // @media screen and (max-width: 575px) {}

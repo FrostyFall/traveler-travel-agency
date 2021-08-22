@@ -81,5 +81,26 @@
   }
 }
 // @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  .filters-container .price-filter {
+    font-size: 0.8rem;
+    width: 70%;
+  }
+
+  .filters-container .price-filter .price-container {
+    .from-container,
+    .to-container {
+      span {
+        font-size: 0.6rem;
+      }
+      input[type="text"] {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .filters-container .price-filter > button {
+    font-size: 0.7rem;
+  }
+}
 // @media screen and (max-width: 576px) {}

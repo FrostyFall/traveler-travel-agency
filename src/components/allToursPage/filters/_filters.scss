@@ -52,5 +52,18 @@ section.all-tours-content-container .all-tours-info .filters {
   }
 }
 // @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  section.all-tours-content-container .all-tours-info .filters {
+    h4 {
+      font-size: 0.7rem;
+      margin-right: 1.9rem;
+    }
+    .filters-container > button {
+      font-size: 0.7rem;
+      &:not(:last-of-type) {
+        margin-right: 1.4rem;
+      }
+    }
+  }
+}
 // @media screen and (max-width: 576px) {}

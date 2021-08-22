@@ -109,5 +109,23 @@
   }
 }
 // @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  .filters-container .country-filter {
+    font-size: 0.8rem;
+    width: 75%;
+  }
+
+  .filters-container
+    .country-filter
+    .country-row
+    > input[type="checkbox"]
+    + *::before {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  .filters-container .country-filter > button {
+    font-size: 0.7rem;
+  }
+}
 // @media screen and (max-width: 576px) {}
