@@ -324,4 +324,96 @@ div.tour .tour-info .cost-info {
     }
   }
 }
-// @media screen and (max-width: 575px) {}
+@media screen and (max-width: 575px) {
+  div.tour {
+    width: 100%;
+    height: 400px;
+  }
+
+  // div.tour .tour-info {
+  //   padding: 0.7rem 1.25rem;
+  // }
+
+  // div.tour .tour-info .general-info h4 {
+  //   font-size: 1.1rem;
+  // }
+
+  // div.tour .tour-info .general-info .ratings-container .score {
+  //   font-size: 1.1rem;
+  // }
+
+  // div.tour .tour-info .cost-info {
+  //   h4 {
+  //     font-size: 0.9rem;
+  //     margin-right: 0.5rem;
+  //   }
+  //   span.cost {
+  //     font-size: 1.05rem;
+  //     padding: 0.15em 0.5em;
+  //   }
+  // }
+  div.tour .tour-info {
+    @include mixins.flex(space-between, center);
+    padding: 0.75rem 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  div.tour .tour-info .general-info {
+    width: 65%;
+    h4 {
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  div.tour .tour-info .general-info .ratings-container {
+    @include mixins.flex(flex-start, center);
+    .ratings {
+      @include mixins.flex(space-between, center);
+      width: 60%;
+      svg {
+        color: vars.$star-color;
+        width: 17%;
+        height: 100%;
+      }
+    }
+    .score {
+      @include mixins.flex(center, center);
+      width: 25%;
+      font-size: 1.05rem;
+      color: #fff;
+    }
+  }
+
+  div.tour .tour-info .cost-info {
+    @include mixins.flex(space-between, center);
+    h4 {
+      color: vars.$secondary-text-color;
+      font-weight: 400;
+      font-size: 0.95rem;
+      margin-right: 0.5rem;
+    }
+    span.cost {
+      background-color: vars.$cost-color;
+      color: #fff;
+      font-size: 1.05rem;
+      padding: 0.15em 0.7em;
+      border-radius: 5px;
+      text-align: center;
+      overflow: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

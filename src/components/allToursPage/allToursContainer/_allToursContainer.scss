@@ -95,4 +95,54 @@ section.all-tours-content-container .all-tours-container > button {
     margin-top: 1.75rem;
   }
 }
-// @media screen and (max-width: 575px) {}
+@media screen and (max-width: 575px) {
+  section.all-tours-content-container {
+    padding: 2rem 0;
+  }
+
+  section.all-tours-content-container .all-tours-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  section.all-tours-content-container .all-tours-info {
+    @include mixins.flex(center, flex-start, column);
+    // @include mixins.flex(space-between, flex-start);
+    h3 {
+      position: relative;
+      &::after {
+        @include mixins.underLine(vars.$primary-color, 0, -0.5em);
+        position: absolute;
+      }
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  section.all-tours-content-container .all-tours {
+    @include mixins.flex(space-between, center);
+    flex-wrap: wrap;
+    row-gap: 1.5rem;
+  }
+
+  section.all-tours-content-container .all-tours.few {
+    @include mixins.flex(flex-start, center);
+    column-gap: 1.15rem;
+  }
+
+  section.all-tours-content-container .all-tours-container > button {
+    @include mixins.button(
+      #fff,
+      vars.$primary-color,
+      0.9rem,
+      1em,
+      5px,
+      none,
+      100%
+    );
+    margin-top: 1.75rem;
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: vars.$secondary-color;
+    }
+  }
+}
