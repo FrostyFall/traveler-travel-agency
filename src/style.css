@@ -237,7 +237,7 @@ header nav ul li.selected a {
   }
 
   header nav ul li {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     padding: 1em 0;
   }
 }
@@ -3377,6 +3377,24 @@ section.all-tours-content-container .all-tours-info .filters .filters-container 
     font-size: 0.7rem;
   }
 }
+@media screen and (max-width: 576px) {
+  .filters-container .ratings-filter {
+    font-size: 0.9rem;
+  }
+
+  .filters-container .ratings-filter .ratings-row > input[type=checkbox] + *::before {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .filters-container .ratings-filter .ratings-row > input[type=checkbox] + span svg {
+    width: 1.1rem;
+  }
+
+  .filters-container .ratings-filter > button {
+    font-size: 0.8rem;
+  }
+}
 .filters-container .price-filter {
   position: absolute;
   top: 2.75em;
@@ -3479,6 +3497,25 @@ section.all-tours-content-container .all-tours-info .filters .filters-container 
     font-size: 0.7rem;
   }
 }
+@media screen and (max-width: 576px) {
+  .filters-container .price-filter {
+    font-size: 0.9rem;
+    width: 80%;
+  }
+
+  .filters-container .price-filter .price-container .from-container span,
+.filters-container .price-filter .price-container .to-container span {
+    font-size: 0.8rem;
+  }
+  .filters-container .price-filter .price-container .from-container input[type=text],
+.filters-container .price-filter .price-container .to-container input[type=text] {
+    font-size: 1rem;
+  }
+
+  .filters-container .price-filter > button {
+    font-size: 0.8rem;
+  }
+}
 .filters-container .country-filter {
   position: absolute;
   top: 2.75em;
@@ -3572,17 +3609,17 @@ section.all-tours-content-container .all-tours-info .filters .filters-container 
 }
 @media screen and (max-width: 768px) {
   .filters-container .country-filter {
-    font-size: 0.8rem;
-    width: 75%;
+    font-size: 0.9rem;
+    width: 80%;
   }
 
   .filters-container .country-filter .country-row > input[type=checkbox] + *::before {
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 1rem;
+    height: 1rem;
   }
 
   .filters-container .country-filter > button {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 section.tour-showcase .main-container {

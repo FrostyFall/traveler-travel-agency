@@ -111,8 +111,8 @@
 // @media screen and (max-width: 992px) {}
 @media screen and (max-width: 768px) {
   .filters-container .country-filter {
-    font-size: 0.8rem;
-    width: 75%;
+    font-size: 0.9rem;
+    width: 80%;
   }
 
   .filters-container
@@ -120,12 +120,12 @@
     .country-row
     > input[type="checkbox"]
     + *::before {
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 1rem;
+    height: 1rem;
   }
 
   .filters-container .country-filter > button {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 // @media screen and (max-width: 576px) {}

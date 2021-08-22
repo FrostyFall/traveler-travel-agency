@@ -149,4 +149,31 @@
     font-size: 0.7rem;
   }
 }
-// @media screen and (max-width: 576px) {}
+@media screen and (max-width: 576px) {
+  .filters-container .ratings-filter {
+    font-size: 0.9rem;
+  }
+
+  .filters-container
+    .ratings-filter
+    .ratings-row
+    > input[type="checkbox"]
+    + *::before {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .filters-container
+    .ratings-filter
+    .ratings-row
+    > input[type="checkbox"]
+    + span {
+    svg {
+      width: 1.1rem;
+    }
+  }
+
+  .filters-container .ratings-filter > button {
+    font-size: 0.8rem;
+  }
+}
