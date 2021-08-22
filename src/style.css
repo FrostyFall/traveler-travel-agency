@@ -1251,7 +1251,7 @@ section.showcase .find-tour-container .custom-select svg {
 }
 @media screen and (max-width: 767px) {
   section.showcase .main-container {
-    min-height: 350px;
+    min-height: 330px;
     padding-bottom: 0.75rem;
   }
 
@@ -3028,7 +3028,7 @@ section.tour-showcase .tour-info-container h3 {
 @media screen and (max-width: 767px) {
   section.tour-showcase .images-container {
     z-index: 0;
-    min-height: 350px;
+    min-height: 330px;
     height: 1px;
   }
   section.tour-showcase .images-container .slide {
