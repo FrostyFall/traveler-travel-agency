@@ -157,4 +157,26 @@ section.about-us .about-us-content {
     }
   }
 }
-// @media screen and (max-width: 575px) {}
+@media screen and (max-width: 575px) {
+  // section.about-us .main-container {
+  //   @include mixins.flex(center, center);
+  // }
+
+  section.about-us .image-container {
+    display: none;
+  }
+
+  section.about-us .image-container,
+  section.about-us .about-us-content {
+    width: 100%;
+  }
+  section.about-us .about-us-content {
+    padding: 1.5rem 2rem;
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      line-height: 1.4;
+    }
+  }
+}

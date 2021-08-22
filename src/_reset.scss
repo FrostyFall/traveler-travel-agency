@@ -133,4 +133,10 @@ a {
     margin-bottom: 2rem;
   }
 }
-// @media screen and (max-width: 575px) {}
+@media screen and (max-width: 575px) {
+  .main-heading {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+  }
+}

@@ -84,4 +84,16 @@ header nav {
     padding: 1em 0;
   }
 }
-// @media screen and (max-width: 575px) {}
+@media screen and (max-width: 575px) {
+  header h1.logo {
+    font-size: 1.1rem;
+  }
+  header nav {
+    min-width: 75%;
+  }
+
+  header nav ul li {
+    font-size: 0.9rem;
+    padding: 1em 0;
+  }
+}
