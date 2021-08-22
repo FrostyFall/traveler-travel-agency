@@ -151,5 +151,49 @@ div.notification-container .close-icon-container {
     font-size: 0.55rem;
   }
 }
-// @media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+  div.notification-container {
+    bottom: 5%;
+    right: 2%;
+    max-width: 280px;
+    font-size: 0.8rem;
+  }
+
+  div.notification-container .status-msg-container p {
+    font-size: 0.7rem;
+  }
+
+  div.notification-container .close-icon-container {
+    min-width: 11px;
+    min-height: 11px;
+    position: relative;
+    cursor: pointer;
+    .slash {
+      position: absolute;
+      width: 14.5px;
+      height: 1.5px;
+      background-color: #d4d4d4;
+    }
+    .slash.forward {
+      top: 0;
+      left: 1px;
+      transform-origin: top left;
+      transform: rotate(45deg);
+    }
+    .slash.reverse {
+      bottom: -0.75px;
+      transform-origin: top left;
+      transform: rotate(-45deg);
+    }
+  }
+  div.notification-container .status-icon-container {
+    background-color: #d4d4d4;
+    min-height: 20px;
+    min-width: 20px;
+    border-radius: 50%;
+    margin-right: 1.15rem;
+    position: relative;
+    font-size: 0.55rem;
+  }
+}
 // @media screen and (max-width: 575px) {}
