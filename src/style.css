@@ -3894,6 +3894,88 @@ section.tour-showcase .tour-info-container h3 {
     font-size: 0.7rem;
   }
 }
+@media screen and (max-width: 575px) {
+  section.tour-showcase .images-container {
+    z-index: 0;
+    min-height: 425px;
+    height: 1px;
+  }
+  section.tour-showcase .images-container .slide {
+    height: 100%;
+    width: 100%;
+    display: none;
+    animation: fade 0.5s forwards;
+  }
+  section.tour-showcase .images-container .loader {
+    height: 100%;
+    width: 100%;
+    animation: pulse 1.5s forwards infinite;
+  }
+
+  section.tour-showcase .slider {
+    position: absolute;
+    top: 0;
+    width: 30%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.2s opacity ease-in-out;
+    cursor: pointer;
+    z-index: 2;
+    animation: initialShow 3s;
+  }
+  section.tour-showcase .slider:hover {
+    opacity: 1;
+  }
+  section.tour-showcase .slider svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    max-width: 1.25rem;
+    color: #fff;
+  }
+  section.tour-showcase .slider.previous-slider {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+    left: 0;
+  }
+  section.tour-showcase .slider.previous-slider svg {
+    left: 15%;
+  }
+  section.tour-showcase .slider.next-slider {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+    right: 0;
+  }
+  section.tour-showcase .slider.next-slider svg {
+    right: 15%;
+  }
+
+  section.tour-showcase .tour-info-container {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 0.5rem 1.25rem;
+    min-width: 24%;
+    width: auto;
+    border-radius: 5px;
+    z-index: 2;
+    text-align: center;
+  }
+  section.tour-showcase .tour-info-container h2 {
+    font-size: 0.9rem;
+    margin-right: 0;
+    line-height: 1.6;
+    letter-spacing: 0.085em;
+    color: #fff;
+  }
+  section.tour-showcase .tour-info-container h3 {
+    color: #eeeeee;
+    font-weight: 400;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+}
 section.tour-experience .main-container {
   display: flex;
   flex-direction: row;
@@ -3985,6 +4067,55 @@ section.tour-experience .image-container .experience-loader {
     line-height: 1.4;
   }
 }
+@media screen and (max-width: 575px) {
+  section.tour-experience .experience-details {
+    width: 90%;
+    padding: 1.5rem 0;
+  }
+  section.tour-experience .experience-details h3 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+  }
+  section.tour-experience .experience-details h3::after {
+    content: "";
+    position: absolute;
+    bottom: -0.4em;
+    left: 0;
+    right: -0.5em;
+    background-color: #1aa483;
+    height: 0.15em;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: 575px) and (max-width: 1200px) {
+  section.tour-experience .experience-details h3::after {
+    height: 0.125em;
+  }
+}
+@media screen and (max-width: 575px) {
+  section.tour-experience .experience-details p {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.4;
+  }
+}
+@media screen and (max-width: 575px) {
+  section.tour-experience .image-container {
+    width: 50%;
+    display: none;
+  }
+  section.tour-experience .image-container img {
+    max-height: 475px;
+    width: 100%;
+  }
+  section.tour-experience .image-container .experience-loader {
+    width: 100%;
+    height: 450px;
+    animation: pulse 1.5s forwards infinite;
+  }
+}
 section.tour-reviews {
   padding: 6rem 0;
 }
@@ -4033,6 +4164,17 @@ section.tour-reviews .tour-reviews-container {
 @media screen and (max-width: 767px) {
   section.tour-reviews {
     padding: 3rem 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  section.tour-reviews {
+    padding: 3rem 0;
+  }
+  section.tour-reviews .tour-reviews-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 }
 div.tour-review {
@@ -4133,6 +4275,36 @@ div.tour-review:hover {
   }
   div.tour-review .ratings svg:not(:last-child) {
     margin-right: 0.25rem;
+  }
+}
+@media screen and (max-width: 575px) {
+  div.tour-review {
+    font-size: 0.9rem;
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+  }
+  div.tour-review p {
+    font-size: 0.8rem;
+  }
+  div.tour-review .ratings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.35rem 0 0.6rem;
+    width: 32.5%;
+  }
+  div.tour-review .ratings svg {
+    color: #f6c000;
+    width: 17%;
+    height: 100%;
+  }
+  div.tour-review .ratings svg:not(:last-child) {
+    margin-right: 0.25rem;
+  }
+  div.tour-review:not(:last-of-type) {
+    margin-bottom: 1.25rem;
   }
 }
 section.tour-booking {
@@ -4367,6 +4539,57 @@ section.tour-booking .booking-container .premium h5 {
 
   section.tour-booking .booking-container > button {
     font-size: 0.7rem;
+    margin-top: 1.75rem;
+  }
+}
+@media screen and (max-width: 575px) {
+  section.tour-booking .booking-container .booking {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  section.tour-booking .booking-container .options,
+section.tour-booking .booking-container form {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  section.tour-booking {
+    padding-bottom: 2rem;
+  }
+
+  section.tour-booking .booking-container .options {
+    margin-bottom: 1rem;
+    min-height: 160px;
+  }
+
+  section.tour-booking .booking-container form {
+    min-height: 175px;
+  }
+
+  section.tour-booking .booking-container .standard,
+section.tour-booking .booking-container .premium {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+  }
+  section.tour-booking .booking-container .standard h5,
+section.tour-booking .booking-container .premium h5 {
+    font-size: 0.8rem;
+  }
+
+  section.tour-booking .booking-container form input {
+    font-size: 1rem;
+    padding: 0.9em 1.25em;
+  }
+
+  section.tour-booking .booking-container > button {
+    font-size: 0.9rem;
     margin-top: 1.75rem;
   }
 }

@@ -294,4 +294,93 @@ section.tour-showcase .tour-info-container {
     }
   }
 }
-// @media screen and (max-width: 575px) {}
+@media screen and (max-width: 575px) {
+  section.tour-showcase .images-container {
+    z-index: 0;
+    min-height: 425px;
+    height: 1px;
+    .slide {
+      height: 100%;
+      width: 100%;
+      display: none;
+      animation: fade 0.5s forwards;
+    }
+    .loader {
+      height: 100%;
+      width: 100%;
+      animation: pulse 1.5s forwards infinite;
+    }
+  }
+
+  section.tour-showcase .slider {
+    position: absolute;
+    top: 0;
+    width: 30%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.2s opacity ease-in-out;
+    cursor: pointer;
+    z-index: 2;
+    animation: initialShow 3s;
+    &:hover {
+      opacity: 1;
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.3rem;
+      max-width: 1.25rem;
+      color: #fff;
+    }
+    &.previous-slider {
+      background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.25)
+      );
+      left: 0;
+      svg {
+        left: 15%;
+      }
+    }
+    &.next-slider {
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.25)
+      );
+      right: 0;
+      svg {
+        right: 15%;
+      }
+    }
+  }
+
+  section.tour-showcase .tour-info-container {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 0.5rem 1.25rem;
+    min-width: 24%;
+    width: auto;
+    border-radius: 5px;
+    z-index: 2;
+    text-align: center;
+    h2 {
+      font-size: 0.9rem;
+      margin-right: 0;
+      line-height: 1.6;
+      letter-spacing: 0.085em;
+      color: #fff;
+    }
+    h3 {
+      color: #eeeeee;
+      font-weight: 400;
+      font-size: 0.7rem;
+      white-space: nowrap;
+    }
+  }
+}
