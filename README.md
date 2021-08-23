@@ -14,6 +14,3 @@ p.s.s. I could've simply replace everything above with this one sentence. 🙁<b
 - SCSS
 - JavaScript
 - React
-- Node JS
-- Express.js
-- MongoDB
