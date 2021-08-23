@@ -9,6 +9,8 @@ import Images from '../components/homePage/images';
 function HomePage() {
   const { setCurrentPage } = useContext(CurrentPageContext);
 
+  useEffect(() => document.title = 'Traveler | Home', []);
+
   useEffect(() => {
     setCurrentPage({ 'home': true, 'all-tours': false })
   }, [setCurrentPage])
