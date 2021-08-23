@@ -6,6 +6,8 @@ import AllToursContainer from '../components/allToursPage/allToursContainer';
 function AllTours() {
   const { setCurrentPage } = useContext(CurrentPageContext);
 
+  useEffect(() => document.title = 'Traveler | All Tours', []);
+
   useEffect(() => {
     setCurrentPage({ 'home': false, 'all-tours': true })
   }, [setCurrentPage])

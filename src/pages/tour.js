@@ -14,6 +14,8 @@ function TourPage() {
   const { title, city, country, experience, imgURLs, prices, reviews } = response;
   const { setCurrentPage } = useContext(CurrentPageContext);
 
+  useEffect(() => document.title = (title) ? `Traveler | ${title} Tour` : 'Traveler | Tour', [title]);
+
   useEffect(() => {
     setCurrentPage({ 'home': false, 'all-tours': false })
   }, [setCurrentPage])
