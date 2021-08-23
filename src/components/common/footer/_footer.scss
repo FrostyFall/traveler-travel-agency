@@ -73,11 +73,12 @@ div.footer-container .links .social {
 div.footer-container .links .contacts,
 div.footer-container .links .company {
   width: 25%;
-  ul li a {
+  ul li span {
     color: #cdcdcd;
     transition: 0.2s color;
+    cursor: pointer;
   }
-  ul li a:hover {
+  ul li span:hover {
     color: vars.$primary-color;
   }
 }
@@ -117,174 +118,51 @@ div.footer-container .copyright {
 
 @media screen and (max-width: 991px) {
   div.footer-container .links {
-    @include mixins.flex(space-between, flex-start);
-    width: 80%;
     font-size: 1.1rem;
-    padding: 2em 0;
-    h3 {
-      font-size: inherit;
-      font-weight: 400;
-      color: #fff;
-      text-align: end;
-    }
     ul {
-      margin-top: 1.5rem;
-      list-style: none;
+      margin-top: 1.45rem;
       font-size: 0.9rem;
-      font-weight: 400;
-      color: #cdcdcd;
-      text-align: end;
       li:not(:first-child) {
-        margin-top: 1rem;
+        margin-top: 0.95rem;
       }
     }
   }
 
   div.footer-container .links .social {
-    width: 50%;
-    h3 {
-      text-align: start;
-    }
     ul {
-      @include mixins.flex(flex-start, center);
       li {
         width: 7%;
       }
-      li a {
-        color: transparent;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-      }
-      li svg {
-        width: 100%;
-        height: 100%;
-        color: #cdcdcd;
-        transition: color 0.3s ease;
-      }
-      li.facebook-icon:hover svg {
-        color: #4267b2;
-      }
-      li.twitter-icon:hover svg {
-        color: #1da1f2;
-      }
-      li:last-child {
-        margin-top: 0;
-      }
-      li:not(:last-child) {
-        margin-right: 1.5rem;
-      }
-    }
-  }
-
-  div.footer-container .links .contacts,
-  div.footer-container .links .company {
-    width: 25%;
-    ul li a {
-      color: #cdcdcd;
-      transition: 0.2s color;
-    }
-    ul li a:hover {
-      color: vars.$primary-color;
     }
   }
 
   div.footer-container .copyright {
-    background-color: #fff;
-    width: 100%;
-    text-align: center;
     font-size: 0.9rem;
-    padding: 1em 0;
-    h2 {
-      font-size: inherit;
-      font-weight: 400;
-    }
   }
 }
+
 @media screen and (max-width: 767px) {
   div.footer-container .links {
-    @include mixins.flex(space-between, flex-start);
-    width: 80%;
     font-size: 1rem;
-    padding: 2em 0;
-    h3 {
-      font-size: inherit;
-      font-weight: 400;
-      color: #fff;
-      text-align: end;
-    }
     ul {
-      margin-top: 1.5rem;
-      list-style: none;
+      margin-top: 1.45rem;
       font-size: 0.8rem;
-      font-weight: 400;
-      color: #cdcdcd;
-      text-align: end;
       li:not(:first-child) {
-        margin-top: 1rem;
+        margin-top: 0.95rem;
       }
     }
   }
 
   div.footer-container .links .social {
-    width: 50%;
-    h3 {
-      text-align: start;
-    }
     ul {
-      @include mixins.flex(flex-start, center);
       li {
         width: 8%;
       }
-      li a {
-        color: transparent;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-      }
-      li svg {
-        width: 100%;
-        height: 100%;
-        color: #cdcdcd;
-        transition: color 0.3s ease;
-      }
-      li.facebook-icon:hover svg {
-        color: #4267b2;
-      }
-      li.twitter-icon:hover svg {
-        color: #1da1f2;
-      }
-      li:last-child {
-        margin-top: 0;
-      }
-      li:not(:last-child) {
-        margin-right: 1.5rem;
-      }
-    }
-  }
-
-  div.footer-container .links .contacts,
-  div.footer-container .links .company {
-    width: 25%;
-    ul li a {
-      color: #cdcdcd;
-      transition: 0.2s color;
-    }
-    ul li a:hover {
-      color: vars.$primary-color;
     }
   }
 
   div.footer-container .copyright {
-    background-color: #fff;
-    width: 100%;
-    text-align: center;
     font-size: 0.8rem;
-    padding: 1em 0;
-    h2 {
-      font-size: inherit;
-      font-weight: 400;
-    }
   }
 }
 
@@ -293,19 +171,12 @@ div.footer-container .copyright {
     @include mixins.flex(center, center, column);
     width: 90%;
     font-size: 1.1rem;
-    padding: 2em 0;
     h3 {
-      font-size: inherit;
-      font-weight: 400;
-      color: #fff;
       text-align: center;
     }
     ul {
       margin-top: 1rem;
-      list-style: none;
       font-size: 1rem;
-      font-weight: 400;
-      color: #cdcdcd;
       text-align: center;
       li:not(:first-child) {
         margin-top: 1rem;
@@ -323,30 +194,6 @@ div.footer-container .copyright {
       li {
         width: 9%;
       }
-      li a {
-        color: transparent;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-      }
-      li svg {
-        width: 100%;
-        height: 100%;
-        color: #cdcdcd;
-        transition: color 0.3s ease;
-      }
-      li.facebook-icon:hover svg {
-        color: #4267b2;
-      }
-      li.twitter-icon:hover svg {
-        color: #1da1f2;
-      }
-      li:last-child {
-        margin-top: 0;
-      }
-      li:not(:last-child) {
-        margin-right: 1.5rem;
-      }
     }
   }
 
@@ -354,24 +201,9 @@ div.footer-container .copyright {
   div.footer-container .links .company {
     margin-top: 2.5rem;
     width: 100%;
-    ul li a {
-      color: #cdcdcd;
-      transition: 0.2s color;
-    }
-    ul li a:hover {
-      color: vars.$primary-color;
-    }
   }
 
   div.footer-container .copyright {
-    background-color: #fff;
-    width: 100%;
-    text-align: center;
     font-size: 1rem;
-    padding: 1em 0;
-    h2 {
-      font-size: inherit;
-      font-weight: 400;
-    }
   }
 }

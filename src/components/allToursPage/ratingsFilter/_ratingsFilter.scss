@@ -120,10 +120,39 @@
     font-size: 0.8rem;
   }
 }
-// @media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 992px) {
+  .filters-container .ratings-filter {
+    font-size: 0.9rem;
+  }
+
+  .filters-container
+    .ratings-filter
+    .ratings-row
+    > input[type="checkbox"]
+    + *::before {
+    width: 0.95rem;
+    height: 0.95rem;
+  }
+
+  .filters-container
+    .ratings-filter
+    .ratings-row
+    > input[type="checkbox"]
+    + span {
+    svg {
+      width: 1.1rem;
+    }
+  }
+
+  .filters-container .ratings-filter > button {
+    font-size: 0.8rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .filters-container .ratings-filter {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .filters-container
@@ -146,9 +175,10 @@
   }
 
   .filters-container .ratings-filter > button {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
+
 @media screen and (max-width: 576px) {
   .filters-container .ratings-filter {
     font-size: 0.9rem;

@@ -47,7 +47,7 @@ section.all-tours-content-container .all-tours-container > button {
   }
 
   section.all-tours-content-container .all-tours {
-    row-gap: 2.5rem;
+    row-gap: 2rem;
   }
 
   section.all-tours-content-container .all-tours.few {
@@ -59,24 +59,13 @@ section.all-tours-content-container .all-tours-container > button {
     margin-top: 2rem;
   }
 }
+
 @media screen and (max-width: 991px) {
   section.all-tours-content-container {
     padding: 2.5rem 0;
   }
-
-  section.all-tours-content-container .all-tours {
-    row-gap: 2.5rem;
-  }
-
-  section.all-tours-content-container .all-tours.few {
-    column-gap: 2.1rem;
-  }
-
-  section.all-tours-content-container .all-tours-container > button {
-    font-size: 0.9rem;
-    margin-top: 2rem;
-  }
 }
+
 @media screen and (max-width: 767px) {
   section.all-tours-content-container {
     padding: 2rem 0;
@@ -95,45 +84,29 @@ section.all-tours-content-container .all-tours-container > button {
     margin-top: 1.75rem;
   }
 }
-@media screen and (max-width: 575px) {
-  section.all-tours-content-container {
-    padding: 2rem 0;
-  }
 
+@media screen and (max-width: 575px) {
   section.all-tours-content-container .all-tours-container {
     width: 90%;
-    margin: 0 auto;
   }
 
   section.all-tours-content-container .all-tours-info {
     @include mixins.flex(center, flex-start, column);
     h3 {
-      position: relative;
-      &::after {
-        @include mixins.underLine(vars.$primary-color, 0, -0.5em);
-        position: absolute;
-      }
       margin-bottom: 1.75rem;
     }
   }
 
   section.all-tours-content-container .all-tours {
-    @include mixins.flex(space-between, center);
-    flex-wrap: wrap;
     row-gap: 1.5rem;
   }
 
   section.all-tours-content-container .all-tours.few {
-    @include mixins.flex(flex-start, center);
     column-gap: 1.15rem;
   }
 
   section.all-tours-content-container .all-tours-container > button {
     font-size: 0.9rem;
     margin-top: 1.75rem;
-    transition: background-color 0.2s;
-    &:hover {
-      background-color: vars.$secondary-color;
-    }
   }
 }

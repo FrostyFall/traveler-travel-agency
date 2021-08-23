@@ -51,7 +51,22 @@ section.all-tours-content-container .all-tours-info .filters {
     }
   }
 }
-// @media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 992px) {
+  section.all-tours-content-container .all-tours-info .filters {
+    h4 {
+      font-size: 0.8rem;
+      margin-right: 1.9rem;
+    }
+    .filters-container > button {
+      font-size: 0.75rem;
+      &:not(:last-of-type) {
+        margin-right: 1.4rem;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   section.all-tours-content-container .all-tours-info .filters {
     h4 {
@@ -66,6 +81,7 @@ section.all-tours-content-container .all-tours-info .filters {
     }
   }
 }
+
 @media screen and (max-width: 576px) {
   section.all-tours-content-container .all-tours-info .filters {
     width: 100%;
@@ -73,24 +89,14 @@ section.all-tours-content-container .all-tours-info .filters {
     @include mixins.flex(space-between, center);
     h4 {
       font-size: 0.85rem;
-      margin-right: 1.5rem;
       margin-right: 0;
-      // display: none;
     }
     .filters-container > button {
       border-radius: 5px;
       font-size: 0.75rem;
       &:not(:last-of-type) {
         margin-right: 1rem;
-        // margin-right: 0;
       }
-    }
-    .filters-container {
-      // @include mixins.flex(space-between, center);
-      position: relative;
-      // width: 75%;
-      // background-color: red;
-      // width: 100%;
     }
   }
 }

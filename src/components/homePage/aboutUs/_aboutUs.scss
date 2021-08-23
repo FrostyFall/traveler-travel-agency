@@ -56,127 +56,41 @@ section.about-us .about-us-content {
 }
 
 @media screen and (max-width: 991px) {
-  section.about-us .main-container {
-    @include mixins.flex(center, center);
-  }
-
-  section.about-us .image-container {
-    width: 50%;
-  }
-
-  section.about-us .about-us-content {
-    width: 50%;
-  }
-
-  // section.about-us .image-container,
-  // section.about-us .about-us-content {
-  //   width: 50%;
-  // }
-
-  section.about-us .image-container {
-    position: relative;
-    z-index: 0;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.1);
-      z-index: 1;
-    }
-  }
-
   section.about-us .about-us-content {
     padding: 0 2rem;
     h3 {
-      position: relative;
-      display: inline-block;
-      &::after {
-        @include mixins.underLine(vars.$primary-color, 0, -0.5em);
-      }
       margin-bottom: 1.5rem;
     }
     p {
       font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 1px;
       line-height: 1.4;
     }
   }
 }
+
 @media screen and (max-width: 767px) {
-  section.about-us .main-container {
-    @include mixins.flex(center, center);
-  }
-
-  section.about-us .image-container {
-    width: 50%;
-  }
-
-  section.about-us .about-us-content {
-    width: 50%;
-  }
-
-  // section.about-us .image-container,
-  // section.about-us .about-us-content {
-  //   width: 50%;
-  // }
-
-  section.about-us .image-container {
-    position: relative;
-    z-index: 0;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.1);
-      z-index: 1;
-    }
-  }
-
   section.about-us .about-us-content {
     padding: 0 2rem;
     h3 {
-      position: relative;
-      display: inline-block;
-      &::after {
-        @include mixins.underLine(vars.$primary-color, 0, -0.5em);
-      }
       margin-bottom: 1.25rem;
     }
     p {
       font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 1px;
       line-height: 1.4;
     }
   }
 }
-@media screen and (max-width: 575px) {
-  // section.about-us .main-container {
-  //   @include mixins.flex(center, center);
-  // }
 
+@media screen and (max-width: 575px) {
   section.about-us .image-container {
     display: none;
   }
 
-  section.about-us .image-container,
   section.about-us .about-us-content {
     width: 90%;
-  }
-  section.about-us .about-us-content {
-    // padding: 1.5rem 2rem;
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 0;
     p {
       font-size: 0.9rem;
-      font-weight: 400;
-      letter-spacing: 1px;
       line-height: 1.4;
     }
   }

@@ -46,104 +46,39 @@ section.all-tours-showcase h2 {
 
 @media screen and (max-width: 991px) {
   section.all-tours-showcase .image-container {
-    position: relative;
     img {
       max-height: 225px;
-      z-index: 0;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      background: linear-gradient(rgba(17, 72, 0, 0.1), rgba(0, 0, 0, 0.1));
     }
   }
 
   section.all-tours-showcase h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
     font-size: 1.2rem;
-    padding: 0.5em 1.75em;
-    background-color: rgba(0, 0, 0, 0.45);
-    letter-spacing: 1px;
-    border-radius: 5px;
-    z-index: 2;
   }
 }
+
 @media screen and (max-width: 767px) {
   section.all-tours-showcase .image-container {
-    position: relative;
     img {
       max-height: 150px;
-      z-index: 0;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      background: linear-gradient(rgba(17, 72, 0, 0.1), rgba(0, 0, 0, 0.1));
     }
   }
 
   section.all-tours-showcase h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
     font-size: 0.9rem;
-    padding: 0.5em 1.75em;
-    background-color: rgba(0, 0, 0, 0.45);
-    letter-spacing: 1px;
-    border-radius: 5px;
-    z-index: 2;
   }
 }
+
 @media screen and (max-width: 575px) {
   section.all-tours-showcase .image-container {
-    position: relative;
     img {
       max-height: 130px;
-      z-index: 0;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      background: linear-gradient(rgba(17, 72, 0, 0.1), rgba(0, 0, 0, 0.1));
     }
   }
 
   section.all-tours-showcase h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
     font-size: 1.05rem;
     padding: 0.5em 1em;
-    // padding: 0.5em 0;
-    // padding: 0;
     text-align: center;
-    width: 70%;
-    background-color: rgba(0, 0, 0, 0.45);
-    letter-spacing: 1px;
-    border-radius: 5px;
-    z-index: 2;
+    white-space: nowrap;
   }
 }

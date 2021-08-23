@@ -108,7 +108,26 @@
     font-size: 0.8rem;
   }
 }
-// @media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 992px) {
+  .filters-container .country-filter {
+    font-size: 0.9rem;
+  }
+
+  .filters-container
+    .country-filter
+    .country-row
+    > input[type="checkbox"]
+    + *::before {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .filters-container .country-filter > button {
+    font-size: 0.8rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .filters-container .country-filter {
     font-size: 0.9rem;
@@ -128,4 +147,23 @@
     font-size: 0.8rem;
   }
 }
-// @media screen and (max-width: 576px) {}
+
+@media screen and (max-width: 576px) {
+  .filters-container .country-filter {
+    font-size: 0.9rem;
+    width: 80%;
+  }
+
+  .filters-container
+    .country-filter
+    .country-row
+    > input[type="checkbox"]
+    + *::before {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .filters-container .country-filter > button {
+    font-size: 0.8rem;
+  }
+}
