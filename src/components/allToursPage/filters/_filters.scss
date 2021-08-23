@@ -36,3 +36,67 @@ section.all-tours-content-container .all-tours-info .filters {
     position: relative;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  section.all-tours-content-container .all-tours-info .filters {
+    h4 {
+      font-size: 0.9rem;
+      margin-right: 1.9rem;
+    }
+    .filters-container > button {
+      font-size: 0.8rem;
+      &:not(:last-of-type) {
+        margin-right: 1.4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  section.all-tours-content-container .all-tours-info .filters {
+    h4 {
+      font-size: 0.8rem;
+      margin-right: 1.9rem;
+    }
+    .filters-container > button {
+      font-size: 0.75rem;
+      &:not(:last-of-type) {
+        margin-right: 1.4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.all-tours-content-container .all-tours-info .filters {
+    h4 {
+      font-size: 0.7rem;
+      margin-right: 1.9rem;
+    }
+    .filters-container > button {
+      font-size: 0.7rem;
+      &:not(:last-of-type) {
+        margin-right: 1.4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  section.all-tours-content-container .all-tours-info .filters {
+    width: 100%;
+    margin-bottom: 1.25rem;
+    @include mixins.flex(space-between, center);
+    h4 {
+      font-size: 0.85rem;
+      margin-right: 0;
+    }
+    .filters-container > button {
+      border-radius: 5px;
+      font-size: 0.75rem;
+      &:not(:last-of-type) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

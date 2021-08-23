@@ -73,11 +73,12 @@ div.footer-container .links .social {
 div.footer-container .links .contacts,
 div.footer-container .links .company {
   width: 25%;
-  ul li a {
+  ul li span {
     color: #cdcdcd;
     transition: 0.2s color;
+    cursor: pointer;
   }
-  ul li a:hover {
+  ul li span:hover {
     color: vars.$primary-color;
   }
 }
@@ -91,5 +92,118 @@ div.footer-container .copyright {
   h2 {
     font-size: inherit;
     font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  div.footer-container .links {
+    font-size: 1.15rem;
+    ul {
+      margin-top: 1.45rem;
+      font-size: 1.05rem;
+      li:not(:first-child) {
+        margin-top: 0.95rem;
+      }
+    }
+  }
+
+  div.footer-container .links .social ul li {
+    width: 7%;
+  }
+
+  div.footer-container .copyright {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  div.footer-container .links {
+    font-size: 1.1rem;
+    ul {
+      margin-top: 1.45rem;
+      font-size: 0.9rem;
+      li:not(:first-child) {
+        margin-top: 0.95rem;
+      }
+    }
+  }
+
+  div.footer-container .links .social {
+    ul {
+      li {
+        width: 7%;
+      }
+    }
+  }
+
+  div.footer-container .copyright {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  div.footer-container .links {
+    font-size: 1rem;
+    ul {
+      margin-top: 1.45rem;
+      font-size: 0.8rem;
+      li:not(:first-child) {
+        margin-top: 0.95rem;
+      }
+    }
+  }
+
+  div.footer-container .links .social {
+    ul {
+      li {
+        width: 8%;
+      }
+    }
+  }
+
+  div.footer-container .copyright {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  div.footer-container .links {
+    @include mixins.flex(center, center, column);
+    width: 90%;
+    font-size: 1.1rem;
+    h3 {
+      text-align: center;
+    }
+    ul {
+      margin-top: 1rem;
+      font-size: 1rem;
+      text-align: center;
+      li:not(:first-child) {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  div.footer-container .links .social {
+    width: 100%;
+    h3 {
+      text-align: center;
+    }
+    ul {
+      @include mixins.flex(center, center);
+      li {
+        width: 9%;
+      }
+    }
+  }
+
+  div.footer-container .links .contacts,
+  div.footer-container .links .company {
+    margin-top: 2.5rem;
+    width: 100%;
+  }
+
+  div.footer-container .copyright {
+    font-size: 1rem;
   }
 }

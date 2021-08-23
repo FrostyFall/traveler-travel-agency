@@ -33,3 +33,52 @@ section.all-tours-showcase h2 {
   border-radius: 5px;
   z-index: 2;
 }
+
+@media screen and (max-width: 1200px) {
+  section.all-tours-showcase .image-container img {
+    max-height: 250px;
+  }
+
+  section.all-tours-showcase h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  section.all-tours-showcase .image-container {
+    img {
+      max-height: 225px;
+    }
+  }
+
+  section.all-tours-showcase h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  section.all-tours-showcase .image-container {
+    img {
+      max-height: 150px;
+    }
+  }
+
+  section.all-tours-showcase h2 {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  section.all-tours-showcase .image-container {
+    img {
+      max-height: 130px;
+    }
+  }
+
+  section.all-tours-showcase h2 {
+    font-size: 1.05rem;
+    padding: 0.5em 1em;
+    text-align: center;
+    white-space: nowrap;
+  }
+}

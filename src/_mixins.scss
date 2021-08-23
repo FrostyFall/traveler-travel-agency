@@ -14,6 +14,9 @@
   background-color: $color;
   height: 0.15em;
   border-radius: 5px;
+  @media screen and (max-width: 1200px) {
+    height: 0.125em;
+  }
 }
 
 @mixin button(

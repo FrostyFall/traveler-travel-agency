@@ -1,8 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
-import { HashLink as Link } from 'react-router-hash-link';
 
 function Footer() {
+  const notRickroll = () => {
+    window.location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+  }
+
   return (
     <footer>
       <div className="footer-container">
@@ -34,13 +37,13 @@ function Footer() {
             <h3>Company</h3>
             <ul>
               <li>
-                <Link to="/#about-us">About Us</Link>
+                <span onClick={notRickroll}>About Us</span>
               </li>
               <li>
-                <Link to="/#most-popular-tours">Most Popular Tours</Link>
+                <span onClick={notRickroll}>Most Popular Tours</span>
               </li>
               <li>
-                <Link to="/#agency-reviews">Agency Reviews</Link>
+                <span onClick={notRickroll}>Agency Reviews</span>
               </li>
             </ul>
           </div>

@@ -17,3 +17,27 @@ section.tour-reviews {
     width: 90%;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  section.tour-reviews {
+    padding: 5rem 0;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.tour-reviews {
+    padding: 4rem 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  section.tour-reviews {
+    padding: 3rem 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  section.tour-reviews {
+    padding: 3rem 0;
+    .tour-reviews-container {
+      @include mixins.flex(space-between, flex-start, column);
+    }
+  }
+}

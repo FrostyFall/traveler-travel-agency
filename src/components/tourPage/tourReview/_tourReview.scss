@@ -17,7 +17,7 @@ div.tour-review {
   }
   .ratings {
     @include mixins.flex(space-between, center);
-    margin: 0.35rem 0 0.6em;
+    margin: 0.35rem 0 0.6rem;
     width: 35%;
     svg {
       color: vars.$star-color;
@@ -36,5 +36,56 @@ div.tour-review {
   }
   &:hover {
     transform: scale(1.025);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  div.tour-review {
+    font-size: 1rem;
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  div.tour-review {
+    font-size: 0.9rem;
+    p {
+      font-size: 0.8rem;
+    }
+    .ratings {
+      width: 45%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  div.tour-review {
+    font-size: 0.8rem;
+    p {
+      font-size: 0.7rem;
+    }
+    .ratings {
+      width: 42.5%;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  div.tour-review {
+    font-size: 0.9rem;
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    p {
+      font-size: 0.8rem;
+    }
+    .ratings {
+      width: 26%;
+    }
+    &:not(:last-of-type) {
+      margin-bottom: 1.25rem;
+    }
   }
 }

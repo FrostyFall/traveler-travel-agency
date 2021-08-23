@@ -34,6 +34,8 @@
       text-align: center;
       outline: none;
       margin: 0.5rem 0;
+      -webkit-appearance: none;
+      appearance: none;
     }
   }
 }
@@ -53,5 +55,96 @@
   &:hover {
     background-color: vars.$secondary-color;
     border-color: vars.$secondary-color;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .filters-container .price-filter {
+    font-size: 0.9rem;
+    width: 75%;
+  }
+
+  .filters-container .price-filter .price-container {
+    .from-container,
+    .to-container {
+      span {
+        font-size: 0.75rem;
+      }
+      input[type="text"] {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .filters-container .price-filter > button {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .filters-container .price-filter {
+    font-size: 0.9rem;
+  }
+
+  .filters-container .price-filter .price-container {
+    .from-container,
+    .to-container {
+      span {
+        font-size: 0.75rem;
+      }
+      input[type="text"] {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .filters-container .price-filter > button {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .filters-container .price-filter {
+    font-size: 0.9rem;
+    width: 80%;
+  }
+
+  .filters-container .price-filter .price-container {
+    .from-container,
+    .to-container {
+      span {
+        font-size: 0.6rem;
+      }
+      input[type="text"] {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .filters-container .price-filter > button {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .filters-container .price-filter {
+    font-size: 0.9rem;
+    width: 80%;
+  }
+
+  .filters-container .price-filter .price-container {
+    .from-container,
+    .to-container {
+      span {
+        font-size: 0.8rem;
+      }
+      input[type="text"] {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .filters-container .price-filter > button {
+    font-size: 0.8rem;
   }
 }

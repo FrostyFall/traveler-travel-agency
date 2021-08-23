@@ -16,3 +16,52 @@ div.images-container .img {
   width: 32%;
   height: 100%;
 }
+
+@media screen and (max-width: 1200px) {
+  div.images {
+    padding: 5rem 0 3rem;
+  }
+
+  div.images-container {
+    min-height: 240px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  div.images {
+    padding: 4rem 0 2.5rem;
+  }
+
+  div.images-container {
+    min-height: 180px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  div.images {
+    padding: 3rem 0 2rem;
+  }
+
+  div.images-container {
+    min-height: 150px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  div.images {
+    padding: 3rem 0 2rem;
+  }
+
+  div.images-container {
+    min-height: auto;
+    height: auto;
+  }
+
+  div.images-container .img {
+    width: 100%;
+    height: 200px;
+    &:not(:first-of-type) {
+      display: none;
+    }
+  }
+}

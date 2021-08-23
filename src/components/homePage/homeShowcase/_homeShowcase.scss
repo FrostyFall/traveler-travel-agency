@@ -102,3 +102,148 @@ section.showcase .find-tour-container .custom-select {
     width: 5%;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  section.showcase .main-container {
+    min-height: 575px;
+    padding-bottom: 1.25rem;
+  }
+
+  section.showcase .encouraging-msg {
+    top: 20%;
+    padding: 0.8rem 1.75rem;
+    h2 {
+      font-size: 1.3rem;
+      margin-right: 1.75rem;
+    }
+  }
+
+  section.showcase .find-tour-container {
+    font-size: 1.05rem;
+    width: 47.5%;
+    button {
+      height: 2.3em;
+    }
+  }
+
+  section.showcase .find-tour-container .custom-select select {
+    padding: 0 1.1em;
+    height: 2.3em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  section.showcase .main-container {
+    min-height: 575px;
+    padding-bottom: 1.5rem;
+  }
+
+  section.showcase .encouraging-msg {
+    top: 15%;
+    left: 30%;
+    transform: translate(-30%, -15%);
+    padding: 0.75rem 1.75rem;
+    h2 {
+      font-size: 1.2rem;
+      margin-right: 1.75rem;
+    }
+  }
+
+  section.showcase .find-tour-container {
+    font-size: 1rem;
+    padding: 0.5em 0.75em;
+    width: 70%;
+    button {
+      height: 2.4em;
+    }
+  }
+
+  section.showcase .find-tour-container .custom-select {
+    select {
+      width: 100%;
+      padding: 0 1em;
+      height: 2.4em;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  section.showcase .main-container {
+    min-height: 330px;
+    padding-bottom: 0.75rem;
+  }
+
+  section.showcase .encouraging-msg {
+    top: 15%;
+    left: 30%;
+    transform: translate(-30%, -15%);
+    padding: 0.5rem 1.25rem;
+    h2 {
+      font-size: 0.9rem;
+      margin-right: 1rem;
+    }
+  }
+
+  section.showcase .find-tour-container {
+    font-size: 0.8rem;
+    padding: 0.5em 0.75em;
+    width: 60%;
+    button {
+      padding: 0;
+      height: 2.4em;
+      width: 50%;
+      margin-left: 0.75em;
+    }
+  }
+
+  section.showcase .find-tour-container .custom-select {
+    select {
+      width: 100%;
+      padding: 0 1em;
+      height: 2.4em;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  section.showcase .main-container {
+    min-height: 425px;
+    padding-bottom: 0.5rem;
+  }
+
+  section.showcase .encouraging-msg {
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -7%);
+    padding: 0.5rem 1.25rem;
+    h2 {
+      white-space: nowrap;
+      text-align: center;
+      font-size: 1.05rem;
+      margin-right: 0rem;
+    }
+  }
+
+  section.showcase .find-tour-container {
+    @include mixins.flex(center, center, column);
+    font-size: 1rem;
+    padding: 0.5em 0.75em;
+    width: 80%;
+    button {
+      padding: 0;
+      height: 2.4em;
+      width: 100%;
+      margin-left: 0;
+      margin-top: 0.5rem;
+    }
+  }
+
+  section.showcase .find-tour-container .custom-select {
+    width: 100%;
+    select {
+      width: 100%;
+      padding: 0 1em;
+      height: 2.4em;
+    }
+  }
+}

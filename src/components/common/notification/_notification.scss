@@ -97,3 +97,93 @@ div.notification-container .close-icon-container {
     transform: rotate(-45deg);
   }
 }
+
+@media screen and (max-width: 1200px) {
+  div.notification-container {
+    max-width: 350px;
+    font-size: 1rem;
+  }
+
+  div.notification-container .status-msg-container p {
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  div.notification-container {
+    max-width: 300px;
+    font-size: 0.9rem;
+  }
+
+  div.notification-container .status-msg-container p {
+    font-size: 0.8rem;
+  }
+
+  div.notification-container .close-icon-container {
+    min-width: 12.5px;
+    min-height: 12.5px;
+    .slash {
+      width: 17.5px;
+    }
+  }
+
+  div.notification-container .status-icon-container {
+    min-height: 20px;
+    min-width: 20px;
+    font-size: 0.55rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  div.notification-container {
+    bottom: 5%;
+    right: 2%;
+    max-width: 280px;
+    font-size: 0.8rem;
+  }
+
+  div.notification-container .status-msg-container p {
+    font-size: 0.7rem;
+  }
+
+  div.notification-container .close-icon-container {
+    min-width: 11px;
+    min-height: 11px;
+    .slash {
+      width: 14.5px;
+    }
+  }
+
+  div.notification-container .status-icon-container {
+    min-height: 20px;
+    min-width: 20px;
+    font-size: 0.55rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  div.notification-container {
+    bottom: 5%;
+    right: 2%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
+
+  div.notification-container .status-msg-container p {
+    font-size: 0.9rem;
+  }
+
+  div.notification-container .close-icon-container {
+    min-width: 12px;
+    min-height: 12px;
+    .slash {
+      width: 16.5px;
+    }
+  }
+
+  div.notification-container .status-icon-container {
+    min-height: 25px;
+    min-width: 25px;
+    font-size: 0.65rem;
+  }
+}

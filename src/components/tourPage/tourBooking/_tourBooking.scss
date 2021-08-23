@@ -61,8 +61,10 @@ section.tour-booking .booking-container .premium {
     color: #6b6b6b;
     margin-top: 0.25rem;
   }
-  &.selected,
   &:hover {
+    border-color: #868686;
+  }
+  &.selected {
     border-color: vars.$primary-color;
   }
 }
@@ -83,6 +85,8 @@ section.tour-booking .booking-container form {
     border-radius: 5px;
     outline: none;
     transition: border-color 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
     &:focus {
       border-color: vars.$primary-color;
     }
@@ -95,5 +99,133 @@ section.tour-booking .booking-container > button {
   transition: background-color 0.2s;
   &:hover {
     background-color: vars.$secondary-color;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  section.tour-booking {
+    padding-bottom: 3rem;
+  }
+
+  section.tour-booking .booking-container .options,
+  section.tour-booking .booking-container form {
+    min-height: 180px;
+  }
+
+  section.tour-booking .booking-container .standard,
+  section.tour-booking .booking-container .premium {
+    @include mixins.flex(space-between, center);
+    font-size: 1.1rem;
+    h5 {
+      font-size: 0.9rem;
+    }
+  }
+
+  section.tour-booking .booking-container form input {
+    font-size: 0.9rem;
+  }
+
+  section.tour-booking .booking-container > button {
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  section.tour-booking {
+    padding-bottom: 2.5rem;
+  }
+
+  section.tour-booking .booking-container .options,
+  section.tour-booking .booking-container form {
+    min-height: 160px;
+  }
+
+  section.tour-booking .booking-container .standard,
+  section.tour-booking .booking-container .premium {
+    font-size: 1rem;
+    h5 {
+      font-size: 0.8rem;
+    }
+  }
+
+  section.tour-booking .booking-container form input {
+    font-size: 0.8rem;
+  }
+
+  section.tour-booking .booking-container > button {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  section.tour-booking {
+    padding-bottom: 2rem;
+  }
+
+  section.tour-booking .booking-container .options,
+  section.tour-booking .booking-container form {
+    min-height: 145px;
+  }
+
+  section.tour-booking .booking-container .standard,
+  section.tour-booking .booking-container .premium {
+    font-size: 0.9rem;
+    h5 {
+      font-size: 0.7rem;
+    }
+  }
+
+  section.tour-booking .booking-container form input {
+    font-size: 0.7rem;
+  }
+
+  section.tour-booking .booking-container > button {
+    font-size: 0.7rem;
+    margin-top: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  section.tour-booking {
+    padding-bottom: 2rem;
+  }
+
+  section.tour-booking .booking-container .booking {
+    @include mixins.flex(center, center, column);
+    width: 100%;
+  }
+
+  section.tour-booking .booking-container .options,
+  section.tour-booking .booking-container form {
+    width: 100%;
+  }
+
+  section.tour-booking .booking-container .options {
+    margin-bottom: 1rem;
+    min-height: 160px;
+  }
+
+  section.tour-booking .booking-container form {
+    min-height: 175px;
+  }
+
+  section.tour-booking .booking-container .standard,
+  section.tour-booking .booking-container .premium {
+    font-size: 1rem;
+    h5 {
+      font-size: 0.8rem;
+    }
+  }
+
+  section.tour-booking .booking-container form input {
+    font-size: 1rem;
+    padding: 0.9em 1.25em;
+  }
+
+  section.tour-booking .booking-container > button {
+    font-size: 0.9rem;
+    margin-top: 1.75rem;
   }
 }
