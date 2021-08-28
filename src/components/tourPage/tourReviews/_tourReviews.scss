@@ -35,7 +35,7 @@ section.tour-reviews {
 }
 @media screen and (max-width: 575px) {
   section.tour-reviews {
-    padding: 3rem 0;
+    padding: 4rem 0;
     .tour-reviews-container {
       @include mixins.flex(space-between, flex-start, column);
     }

@@ -73,7 +73,7 @@ section.most-popular-tours .tours {
       display: inline-block;
       position: relative;
       width: 42.5%;
-      height: 375px;
+      height: 400px;
       cursor: pointer;
       transition: transform 0.3s;
       border-radius: 5px;
@@ -178,7 +178,7 @@ section.most-popular-tours .tours {
 
 @media screen and (max-width: 575px) {
   section.most-popular-tours {
-    padding: 3rem 0 0;
+    padding: 4rem 0 0;
   }
 
   section.most-popular-tours .info-container {
@@ -202,8 +202,8 @@ section.most-popular-tours .tours {
     }
     div.tour {
       display: inline-block;
-      width: 225px;
-      height: 275px;
+      width: 250px;
+      height: 300px;
       &:hover {
         transform: none;
       }

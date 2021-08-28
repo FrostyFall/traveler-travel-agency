@@ -135,4 +135,16 @@ a {
     font-size: 0.95rem;
     margin-bottom: 2rem;
   }
+
+  .tour-preview-loader {
+    display: inline-block;
+    width: 250px;
+    height: 300px;
+    &:hover {
+      transform: none;
+    }
+    &:not(:last-of-type) {
+      margin-right: 0.75rem;
+    }
+  }
 }
