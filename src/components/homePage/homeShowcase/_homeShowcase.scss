@@ -207,7 +207,7 @@ section.showcase .find-tour-container .custom-select {
 
 @media screen and (max-width: 575px) {
   section.showcase .main-container {
-    min-height: 425px;
+    min-height: 450px;
     padding-bottom: 0.5rem;
   }
 
@@ -227,7 +227,7 @@ section.showcase .find-tour-container .custom-select {
   section.showcase .find-tour-container {
     @include mixins.flex(center, center, column);
     font-size: 1rem;
-    padding: 0.5em 0.75em;
+    padding: 0.425em 0.6em;
     width: 80%;
     button {
       padding: 0;

@@ -86,6 +86,10 @@ section.all-tours-content-container .all-tours-container > button {
 }
 
 @media screen and (max-width: 575px) {
+  section.all-tours-content-container {
+    padding: 3rem 0;
+  }
+
   section.all-tours-content-container .all-tours-container {
     width: 90%;
   }

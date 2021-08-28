@@ -18,14 +18,11 @@ div.tour-review {
   .ratings {
     @include mixins.flex(space-between, center);
     margin: 0.35rem 0 0.6rem;
-    width: 35%;
+    width: 32.5%;
     svg {
       color: vars.$star-color;
       width: 17%;
       height: 100%;
-    }
-    svg:not(:last-child) {
-      margin-right: 0.25rem;
     }
   }
   p {
@@ -45,6 +42,9 @@ div.tour-review {
     p {
       font-size: 0.95rem;
     }
+    .ratings {
+      width: 35%;
+    }
   }
 }
 
@@ -55,7 +55,7 @@ div.tour-review {
       font-size: 0.8rem;
     }
     .ratings {
-      width: 45%;
+      width: 42.5%;
     }
   }
 }
