@@ -123,11 +123,39 @@ a {
     font-size: 1.1rem;
     margin-bottom: 2.25rem;
   }
+
+  .tour-preview-loader {
+    display: inline-block;
+    position: relative;
+    width: 42.5%;
+    height: 400px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border-radius: 5px;
+    &:hover {
+      transform: none;
+    }
+    &:not(:last-of-type) {
+      margin-right: 0.75rem;
+    }
+  }
 }
 @media screen and (max-width: 767px) {
   .main-heading {
     font-size: 0.95rem;
     margin-bottom: 2rem;
+  }
+
+  .tour-preview-loader {
+    display: inline-block;
+    width: 35%;
+    height: 275px;
+    &:hover {
+      transform: none;
+    }
+    &:not(:last-of-type) {
+      margin-right: 0.75rem;
+    }
   }
 }
 @media screen and (max-width: 575px) {
