@@ -113,6 +113,11 @@ a {
     font-size: 1.2rem;
     margin-bottom: 2.75rem;
   }
+
+  .tour-preview-loader {
+    width: 32%;
+    height: 425px;
+  }
 }
 @media screen and (max-width: 991px) {
   .main-heading {
