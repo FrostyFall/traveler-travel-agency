@@ -41,6 +41,7 @@ function AllToursContainer() {
   }, [totalRetrievedDocs, totalDocuments]);
 
   useEffect(() => {
+    console.log(data.data);
     if (!data.isFetching && !data.isError && data.data.docs.length !== 0) {
       const { documentsCount, retrievedDocs } = data.data;
 
