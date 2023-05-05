@@ -4,7 +4,7 @@ import TourPreview from "../../common/tourPreview";
 
 function MostPopTours() {
   const { data } = useFetch(
-    "https://traveler-travel-agency.herokuapp.com/api/v1/popular-tours-previews"
+    "https://wandering-garment-eel.cyclic.app/api/v1/popular-tours-previews"
   );
   const { data: response, isFetching, isError } = data;
 

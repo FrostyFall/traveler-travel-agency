@@ -8,7 +8,7 @@ function CountryFilter({ isShown, filterRef }) {
   const { selectedCountry } = useContext(CountryContext);
   const [checkedLocations, setCheckedLocations] = useState({ all: true });
   const { data } = useFetch(
-    "https://traveler-travel-agency.herokuapp.com/api/v1/locations"
+    "https://wandering-garment-eel.cyclic.app/api/v1/locations"
   );
 
   useEffect(() => {

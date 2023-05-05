@@ -9,7 +9,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 function HomeShowcase() {
   const history = useHistory();
   const { data } = useFetch(
-    "https://traveler-travel-agency.herokuapp.com/api/v1/locations"
+    "https://wandering-garment-eel.cyclic.app/api/v1/locations"
   );
   const { data: response, isFetching, isError } = data;
   const [selected, setSelected] = useState("");

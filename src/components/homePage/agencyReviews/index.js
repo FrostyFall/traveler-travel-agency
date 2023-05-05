@@ -3,7 +3,7 @@ import AgencyReview from "../agencyReview";
 
 function AgencyReviews() {
   const { data } = useFetch(
-    "https://traveler-travel-agency.herokuapp.com/api/v1/agency-reviews"
+    "https://wandering-garment-eel.cyclic.app/api/v1/agency-reviews"
   );
   const { data: response, isFetching, isError } = data;
 
