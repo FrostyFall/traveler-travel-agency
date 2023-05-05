@@ -55,7 +55,7 @@ function AllToursContainer() {
 
   const showMoreHandler = () => {
     fetchTourPreviews(
-      `https://traveler-travel-agency.herokuapp.com/api/v1/all-tours-previews?skip=${
+      `https://wandering-garment-eel.cyclic.app/api/v1/all-tours-previews?skip=${
         skipCount + 6
       }`,
       queries,

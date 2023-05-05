@@ -10,7 +10,7 @@ import TourBooking from "../components/tourPage/tourBooking";
 function TourPage() {
   const { tourId } = useParams();
   const { data } = useFetch(
-    `https://traveler-travel-agency.herokuapp.com/api/v1/all-tours/${tourId}`
+    `https://wandering-garment-eel.cyclic.app/api/v1/all-tours/${tourId}`
   );
   const { data: response } = data;
   const { title, city, country, experience, imgURLs, prices, reviews } =
